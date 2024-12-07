@@ -42,7 +42,6 @@
 </head>
 <body>
 
-  <!-- James Burgess*, Jeffrey J Nirschl*, Laura Bravo-Sánchez*, Alejandro Lozano, Sanket Rajan Gupte, Jesus G. Galaz-Montoya, Yuhui Zhang, Yuchang Su, Disha Bhowmik, Zachary Coman, Sarina M. Hasan, Alexandra Johannesson, William D. Leineweber, Malvika G Nair, Ridhi Yarlagadda, Connor Zuraski, Wah Chiu, Sarah Cohen, Jan N. Hansen, Manuel D Leonetti, Chad Liu, Emma Lundberg, Serena Yeung-Levy -->
 
 <section class="hero">
   <div class="hero-body">
@@ -50,7 +49,7 @@
       <div class="columns is-centered">
         <div class="column has-text-centered">
           <h1 class="title is-2 publication-title">MicroVQA: A Multimodal Reasoning Benchmark for Microscopy-Based Scientific Research</h1>
-          <h3 class="title is-4">In review</h3>
+          <h3 class="title is-4">Preprint</h3>
           <div class="is-size-5 publication-authors">
             <span class="author-block">
               <a href="">James Burgess</a>*<sup>1</sup>,</span>
@@ -58,14 +57,56 @@
               <a href="">Jeffrey J Nirschl</a>*<sup>1</sup>,</span>
             <span class="author-block">
               <a href="">Laura Bravo-Sánchez</a>*<sup>1</sup>,</span>
-              <span class="author-block">
-              <a href="">Alejandro Lozano</a>*<sup>1</sup>,</span>
+            <span class="author-block">
+              <a href="">Alejandro Lozano</a><sup>1</sup>,</span>
+            <span class="author-block">
+              <a href="">Sanket Rajan Gupte</a><sup>1</sup>,</span>
+            <span class="author-block">
+              <a href="">Jesus G. Galaz-Montoya</a><sup>1</sup>,</span>
+            <span class="author-block">
+              <a href="">Yuhui Zhang</a><sup>1</sup>,</span>
+            <span class="author-block">
+              <a href="">Yuchang Su</a><sup>2</sup>,</span>
+            <span class="author-block">
+              <a href="">Disha Bhowmik</a><sup>3</sup>,</span>
+            <span class="author-block">
+              <a href="">Zachary Coman</a><sup>3</sup>,</span>
+            <span class="author-block">
+              <a href="">Sarina M. Hasan</a><sup>4</sup>,</span>
+            <span class="author-block">
+              <a href="">Alexandra Johannesson</a><sup>5</sup>,</span>
+            <span class="author-block">
+              <a href="">William D. Leineweber</a><sup>1</sup>,</span>
+            <span class="author-block">
+              <a href="">Malvika G Nair</a><sup>3</sup>,</span>
+            <span class="author-block">
+              <a href="">Ridhi Yarlagadda</a><sup>3</sup>,</span>1
+            <span class="author-block">
+              <a href="">Connor Zuraski</a><sup>1</sup>,</span>
+            <span class="author-block">
+              <a href="">Wah Chiu</a><sup>1</sup>,</span>
+            <span class="author-block">
+              <a href="">Sarah Cohen</a><sup>3</sup>,</span>
+            <span class="author-block">
+              <a href="">Jan N. Hansen</a><sup>1</sup>,</span>
+            <span class="author-block">
+              <a href="">Manuel D Leonetti</a><sup>6</sup>,</span>
+            <span class="author-block">
+              <a href="">Chad Liu</a><sup>6</sup>,</span>
+            <span class="author-block">
+              <a href="">Emma Lundberg</a><sup>6</sup>,</span>
             <span class="author-block">
               <a href="https://ai.stanford.edu/~syyeung/">Serena Yeung-Levy</a><sup>1</sup>
             </span>
           </div>
+
           <div class="is-size-5 publication-authors">
-            <span class="author-block"><sup>1</sup>Stanford University</span>
+            <span class="author-block"><sup>1</sup>Stanford University,</span>
+            <span class="author-block"><sup>2</sup>Tsinghua University,</span>
+            <span class="author-block"><sup>3</sup>University of North Carolina at Chapel Hill,</span>
+            <span class="author-block"><sup>4</sup>Princeton University</span>
+            <span class="author-block"><sup>5</sup>KTH Royal Institute of Technology</span>
+            <span class="author-block"><sup>6</sup>Chan Zuckerberg Biohub Network</span>
           </div>
 
           <div class="column has-text-centered">
@@ -102,7 +143,7 @@
   <div class="container is-max-desktop">
     <div class="hero-body">
       <h2 class="subtitle has-text-centered">
-       We demonstrate that text-to-image diffusion models have 3D view control in their text input space - they have '3D view tokens'. We also show applications to view-controlled text-to-image generation & novel view synthesis from only 1 image.. 
+       An release an expert-curated benchmark for research-level reasoning in biological microscopy. We also propose a novel method for making multiple-choice visual-question answering (VQA) more challenging.
       </h2>
       <img src="./static/images/pull.png"
                  class=""
@@ -122,7 +163,7 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            Scientific research demands sophisticated reasoning over multimodal data, a challenge especially prevalent in biology. Despite recent advances in multimodal large language models (MLLMs) for AI-assisted research, existing multimodal reasoning benchmarks target up to college-level difficulty, while research-level benchmarks emphasize lower-level perception, falling short of the complex multimodal reasoning needed for scientific discovery. To bridge this gap, we introduce MicroVQA, a visual-question answering (VQA) benchmark designed to assess three reasoning capabilities vital in research workflows: expert image understanding, hypothesis generation, and experiment proposal. MicroVQA consists of 1,061 multiple-choice questions (MCQs) curated by biological experts across diverse microscopy modalities, ensuring VQA samples represent real scientific practice. We find that standard MCQ creation methods do not properly test our targeted reasoning capabilities, motivating a new two-stage pipeline: an optimized LLM prompt structures question-answer pairs into MCQs; then, an agent-based 'RefineBot' generates more challenging distractors. Benchmarking on state-of-the-art MLLMs reveal a peak performance of 43\%; models with smaller LLMs only slightly underperform top models, suggesting that language-based reasoning is less challenging than multimodal reasoning; and tuning with scientific articles enhances performance. Expert analysis of chain-of-thought reasoning failures indicates that multimodal reasoning errors are frequent, followed by knowledge errors and overgeneralization. These insights highlight the challenges in multimodal scientific reasoning, showing MicroVQA is a valuable resource advancing AI-driven biomedical research. MicroVQA is available <a href=
+            Scientific research demands sophisticated reasoning over multimodal data, a challenge especially prevalent in biology. Despite recent advances in multimodal large language models (MLLMs) for AI-assisted research, existing multimodal reasoning benchmarks target up to college-level difficulty, while research-level benchmarks emphasize lower-level perception, falling short of the complex multimodal reasoning needed for scientific discovery. To bridge this gap, we introduce MicroVQA, a visual-question answering (VQA) benchmark designed to assess three reasoning capabilities vital in research workflows: expert image understanding, hypothesis generation, and experiment proposal. MicroVQA consists of 1,061 multiple-choice questions (MCQs) curated by biological experts across diverse microscopy modalities, ensuring VQA samples represent real scientific practice. We find that standard MCQ creation methods do not properly test our targeted reasoning capabilities, motivating a new two-stage pipeline: an optimized LLM prompt structures question-answer pairs into MCQs; then, an agent-based 'RefineBot' generates more challenging distractors. Benchmarking on state-of-the-art MLLMs reveal a peak performance of 43%; models with smaller LLMs only slightly underperform top models, suggesting that language-based reasoning is less challenging than multimodal reasoning; and tuning with scientific articles enhances performance. Expert analysis of chain-of-thought reasoning failures indicates that multimodal reasoning errors are frequent, followed by knowledge errors and overgeneralization. These insights highlight the challenges in multimodal scientific reasoning, showing MicroVQA is a valuable resource advancing AI-driven biomedical research. MicroVQA is available <a href=
             "https://huggingface.co/datasets/microvqa/microvqa">here</a>.
           </p>
         </div>
