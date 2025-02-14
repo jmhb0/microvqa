@@ -41,7 +41,8 @@ def run_refinebot(cfg: OmegaConf,
             'correct_index': int
         use_case: int
     """
-    # config #
+    # initialize logger
+    # TODO: check logging exp folder is working with seed
     dir_results, f_summary, log_str_main = config_logger(cfg, seed)
 
     # Prepare function args for all the questions
@@ -301,8 +302,8 @@ def evaluate_mcq_noimage(question_stem: str, choices: list[str],
     Run evaluation of the MCQ without an image. 
     """
     # "no image" prefix guidance + the standard CoT prompt + regex from MMLU-pro
-    prompt_prefix = prompts.prompts_eval[cfg_eval.key]['prefix']
-    prompt_suffix = prompts.prompts_eval[cfg_eval.key]['suffix']
+    prompt_prefix = prompts.prompts_eval[cfg_eval.prompt_key]['prefix']
+    prompt_suffix = prompts.prompts_eval[cfg_eval.prompt_key]['suffix']
     regex_pattern = r"answer is \(?([a-zA-Z])\)?"
 
     # make choices string
@@ -379,7 +380,7 @@ def _extract_mc_answer(text_response, regex_pattern):
 
 def reflect_on_mcqnoimage_pass(conversation: list[dict],
                                cfg_reflect: OmegaConf, seed: int):
-    prompt_text = prompts.prompts_reflect[cfg_reflect.key]
+    prompt_text = prompts.prompts_reflect[cfg_reflect.prompt_key]
     response = call_gpt(prompt_text,
                         model=cfg_reflect.model,
                         conversation=conversation,
@@ -403,7 +404,7 @@ def rewrite_qa(reflections: list[dict], cfg_rewrite,
     conversations = [r['conversation'] for r in reflections]
     n_conversations = len(conversations)
 
-    prompt = prompts.prompts_rewrite[cfg_rewrite.key]
+    prompt = prompts.prompts_rewrite[cfg_rewrite.prompt_key]
     prompt = prompt.replace("{{n_chat}}", str(n_conversations))
     prompt = prompt.replace("{{n_choices}}", str(cfg_rewrite.n_choices_target))
 
@@ -452,7 +453,7 @@ def check_rewrite_issame(question_stem_original: str, answer_original: str,
     After revising question, run a check that the underlying content hasn't changed
     (Note: Doing 1-indexing and not 0-indexing for simplifying the prompt)
     """
-    prompt = prompts.prompt_check_rewrite[cfg_check_rewrite.key]
+    prompt = prompts.prompt_check_rewrite[cfg_check_rewrite.prompt_key]
     prompt = prompt.replace("{{question_stem_1}}", question_stem_original)
     prompt = prompt.replace("{{answer_1}}", answer_original)
     prompt = prompt.replace("{{question_stem_2}}", question_stem_new)
