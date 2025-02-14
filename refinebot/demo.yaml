@@ -6,7 +6,7 @@ run:
   multiprocessing: False
   max_workers: 48
   shuffle: False
-  data_file_path: "data/demo_data.csv"
+  data_file_path: "demo_dataset.csv"
   results_dir: "results"
 eval:
   model: "o1-mini-2024-09-12"
