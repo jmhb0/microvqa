@@ -1,0 +1,26 @@
+dataset_name: "demo"
+run:
+  name: "demo_experiment"
+  seeds: [0]
+  max_iters: 2
+  multiprocessing: False
+  max_workers: 48
+  shuffle: False
+  data_file_path: "data/demo_data.csv"
+  results_dir: "results"
+eval:
+  model: "o1-mini-2024-09-12"
+  prompt_key: 0
+  multi_eval: 1
+reflect:
+  model: "o1-mini-2024-09-12"
+  prompt_key: 0
+rewrite:
+  model: "o1-mini-2024-09-12"
+  key: 0
+  strucured_output_key: 0
+  n_choices_target: 4
+check_rewrite:
+  model: "gpt4-o-2024-09-12"
+  key: 0
+  strucured_output_key: 1 # for newer models that can handle structured outputs
