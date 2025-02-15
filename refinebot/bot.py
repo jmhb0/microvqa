@@ -1,7 +1,7 @@
 """
 python -m ipdb refine_bot/bot.py
 """
-
+import os
 from types import SimpleNamespace
 import ipdb
 import sys
@@ -15,7 +15,6 @@ from collections import Counter
 import logging
 import ast
 from PIL import Image
-from models.openai_api import call_gpt_batch, call_gpt
 import re
 from pydantic import BaseModel
 from omegaconf import OmegaConf
@@ -26,12 +25,14 @@ import csv
 import threading
 import concurrent.futures
 
-from benchmark.refine_bot import prompts
+import all_prompts as prompts
+from models.openai_api import call_gpt_batch, call_gpt
 
 file_lock = threading.Lock()
 
 def run_refinebot(cfg: OmegaConf,
                   df: pd.DataFrame,
+                  run_number: int = 0,
                   seed: int = 0):
     """
     df must have the columns:
@@ -42,8 +43,7 @@ def run_refinebot(cfg: OmegaConf,
         use_case: int
     """
     # initialize logger
-    # TODO: check logging exp folder is working with seed
-    dir_results, f_summary, log_str_main = config_logger(cfg, seed)
+    dir_results, f_summary, log_str_main = config_logger(cfg, run_number, seed)
 
     # Prepare function args for all the questions
     func_args = []
@@ -55,19 +55,18 @@ def run_refinebot(cfg: OmegaConf,
         log_str = f"question_{key_question}"
 
         question_stem = row['question']
-        choices_dict = ast.literal_eval(row['choices'])
-        choices = choices_dict['choices']
-        correct_index = choices_dict['correct_index']
+        choices = ast.literal_eval(row['choices'])
+        correct_index = row['correct_index']
         use_case = row['use_case']
 
         if cfg.run.shuffle:
             choices, correct_index = _shuffle_choices(choices, correct_index,
                                                       seed)
 
-        dir_log = dir_results / log_str
+        dir_log = os.path.join(dir_results, log_str)
 
         # Collect arguments for this question
-        args = (dir_log, cfg, question_stem, choices, correct_index, f_summary,
+        args = (cfg, dir_log, question_stem, choices, correct_index, f_summary,
                 log_str, use_case, seed)
         func_args.append(args)
 
@@ -93,16 +92,13 @@ def run_refinebot(cfg: OmegaConf,
         )
     _save_final_results(f_summary, log_str_main, cfg)
 
-def config_logger(cfg, seed):
-    # the run number is the highest run number in existing log files plus 1
-    log_files = glob.glob(str(cfg.run.results_dir / "run_*.log"))
-    run_nums = [0] + [int(Path(f).stem.split("_")[1]) for f in log_files]
-    run_num = max(run_nums) + 1
+def config_logger(cfg, run_num, seed):
+    exp_dir = os.path.join(cfg.run.results_dir, cfg.run.name)
+    os.makedirs(exp_dir, exist_ok=True)
 
-    # logging filename and folder name has run number and timestamp
-    timestamp = datetime.now().strftime('%Y%m%d-%H%M%S')
-    log_str = f"run_{run_num:04d}_{timestamp}_{cfg.run.name}_{seed}"
-    log_filename = cfg.run.results_dir / f"{log_str}.log"
+    # logging filename and folder name has run number
+    log_str = f"run_{run_num:04d}_{seed}_{cfg.run.name}"
+    log_filename = os.path.join(exp_dir, f"{log_str}.log")
     logging.basicConfig(
         level=logging.INFO,
         format='%(asctime)s - %(levelname)s - %(message)s',
@@ -116,18 +112,18 @@ def config_logger(cfg, seed):
     logging.getLogger().handlers[2].setLevel(logging.ERROR)
 
     # experiment-level results directory
-    dir_results = cfg.run.results_dir / f"res_{log_str}"
-    dir_results.mkdir(exist_ok=True)
+    dir_results = os.path.join(exp_dir, f"res_{log_str}")
+    os.makedirs(dir_results, exist_ok=True)
 
     # save the config and dump to the logger
-    f_save = dir_results / f"cfg.json"
+    f_save = os.path.join(dir_results, f"cfg.json")
     with open(f_save, 'w') as fp:
         json.dump(OmegaConf.to_container(cfg), fp, indent=4)
     logging.info("Config:")
     logging.info(json.dumps(OmegaConf.to_container(cfg), indent=4))
 
     # set up the results csv
-    f_summary = cfg.run.results_dir / f"sum_{log_str}_samples_async.csv"
+    f_summary = os.path.join(exp_dir, f"sum_{log_str}_samples_async.csv")
     with file_lock:
         with open(f_summary, mode='a', newline="") as fp:
             writer = csv.writer(fp)
@@ -317,7 +313,7 @@ def evaluate_mcq_noimage(question_stem: str, choices: list[str],
 
     # run gpt, extract prediction
     rets = []
-    num_evals = cfg_eval['multi_eval']
+    num_evals = cfg_eval.multi_eval
     is_correct_cnt = 0
     is_correct_lst = []
     for eval_num in range(num_evals):
@@ -495,13 +491,13 @@ def _log_qa(dir_log,
             explanation=""):
     """ """
     # log as string
-    f_save = dir_log / f"0_qa_iter_{iteration}.txt"
+    f_save = os.path.join(dir_log, f"0_qa_iter_{iteration}.txt")
     str_log = _stringify_mcq_for_logging(question_stem, choices, correct_index)
     with open(f_save, "w") as fp:
         fp.write(str_log)
 
     # log as json for easier reading
-    f_save = dir_log / f"0_5_qa_iter_{iteration}.json"
+    f_save = os.path.join(dir_log, f"0_5_qa_iter_{iteration}.json")
     mcq_object = prompts.McqQA(question_stem=question_stem,
                                choices=choices,
                                correct_index=correct_index,
@@ -533,19 +529,19 @@ def _log_eval(dir_log, iteration, results_eval_mcq_noimage, correct_index):
         str_log += f"\n{80*'-'}\nResponse (target answer is {idx_to_letter[correct_index]})\n{80*'-'}\n"
         str_log += msgs[1]['content']
 
-        with open(dir_log / f"1_eval_iter_{iteration}__run_{i}.txt", 'w') as fp:
+        with open(os.path.join(dir_log, f"1_eval_iter_{iteration}__run_{i}.txt"), 'w') as fp:
             fp.write(str_log)
 
 def _log_reflections(dir_log, iteration, result_reflection):
     str_log = _stringify_conversation_pretty(result_reflection['conversation'])
-    with open(dir_log / f"2_reflection_iter_{iteration}.txt", 'w') as fp:
+    with open(os.path.join(dir_log, f"2_reflection_iter_{iteration}.txt"), 'w') as fp:
         fp.write(str_log)
 
 
 def _log_rewrites(dir_log, iteration, results_check_rewrite_issame):
     str_log = _stringify_conversation_pretty(
         results_check_rewrite_issame['messages'])
-    with open(dir_log / f"3_rewrite_iter_{iteration}.txt", 'w') as fp:
+    with open(os.path.join(dir_log, f"3_rewrite_iter_{iteration}.txt"), 'w') as fp:
         fp.write(str_log)
 
 
@@ -563,7 +559,7 @@ def _log_check_rewrite(dir_log, iteration, results_check_rewrite_issame):
     str_log += f"\n{80*'*'}\n"
     str_log += f"is_equivalent: {res['explanation']}\n\n"
 
-    with open(dir_log / f"4_checkrewrite_iter_{iteration}.txt", 'w') as fp:
+    with open(os.path.join(dir_log, f"4_checkrewrite_iter_{iteration}.txt"), 'w') as fp:
         fp.write(str_log)
 
 
@@ -724,83 +720,90 @@ def _save_final_results(f_summary, log_str, cfg):
     logging.info(
         f"Final results in \n\t{f_summary_ordered}\n\t{f_summary_stats}")
     
-# def get_refinebot_mcqs(cfg, name, run_number):
 def get_refinebot_mcqs(cfg, run_number=0):
-    # TODO: check that this works and naming for results of different iters. Do we need name?
-    dir_rewrite = cfg.run.results_dir
-    print("*" * 80)
-    print(f"Getting results from directory {dir_rewrite}")
+    """
+    Compiles MCQs for the run from the original questions or succesful rewrites by RefineBot.
+    """
+    dir_rewrite = os.path.join(cfg.run.results_dir, cfg.run.name)
 
-    if not Path(dir_rewrite):
-        raise ValueError(f"no results folder for {dir_rewrite}")
+    # Retrieve the results CSV
+    results_files = glob.glob(f"{dir_rewrite}/sum_run_{run_number:04d}*_sorted*")
+    if not results_files:
+        raise FileNotFoundError(f"No results CSV found in {dir_rewrite} for run {run_number:04d}")
+    
+    df_results = pd.read_csv(results_files[0])
+    df_results["question_key"] = df_results["log_str"].str.split("_").str[1]
 
-    # first recover the results csv
-    # get the old csv, and add accuracy results to it
-    f_results_ = glob.glob(f"{dir_rewrite}/sum_run_{run_number:04d}*_sorted*")
-    f_results = f_results_[0]
-    df_results = pd.read_csv(f_results)
-    df_results['question_key'] = [
-        d[1] for d in df_results['log_str'].str.split("_")
-    ]
-    # df_results.index = df_results["key_question"]
+    # Locate results directory for the run
+    result_dirs = glob.glob(f"{dir_rewrite}/res_run_{run_number:04d}_*")
+    if len(result_dirs) != 1:
+        raise ValueError(f"Expected exactly one results directory, but found {len(result_dirs)}: {result_dirs}")
+    
+    dir_questions = result_dirs[0]
+    question_dirs = glob.glob(f"{dir_questions}/question_*")
+    
+    keys_question = sorted(int(Path(d).stem.split("_")[1]) for d in question_dirs)
 
-    dirs = glob.glob(f"{dir_rewrite}/res_run_{run_number:04d}_*")
-    assert len(dirs) == 1
-    dirs_rewrite_qs = dirs[0]
-    dirs_questions = glob.glob(f"{dirs_rewrite_qs}/question_*")
-    keys_question = [int(Path(d).stem.split("_")[1]) for d in dirs_questions]
-    keys_question = sorted(keys_question)
-
-    # get the question mcqs
-    mcqs = []
-    mcqs_question = []
-    mcqs_choices = []
-    codes = []
+    # Process MCQs
+    data = []
+    
     for key_question in keys_question:
-        row_ = df_results[df_results['key_question'] == key_question]
-        assert len(row_) == 1
-        row = row_.iloc[0]
-        assert row['key_question'] == key_question
+        row = df_results[df_results["key_question"] == key_question]
+        if row.empty:
+            raise ValueError(f"No matching row found in results for key_question {key_question}")
+        
+        row = row.iloc[0]
 
-        code = row['code']
-        codes.append(code)
-        # if rewrite failed get the original question
-        if 'SUCCESS' not in code:
-            file = f"{dirs_rewrite_qs}/question_{key_question}/0_5_qa_iter_0.json"
+        # Determine the appropriate MCQ file
+        question_path = f"{dir_questions}/question_{key_question}"
+        if "SUCCESS" not in row["code"]:
+            file_path = f"{question_path}/0_5_qa_iter_0.json"
         else:
-            # if rewrite was a success, get the question from the last iteration
-            files = glob.glob(
-                f"{dirs_rewrite_qs}/question_{key_question}/0_5_qa_iter*")
-            nums = [int(Path(f).stem.split("_")[4]) for f in files]
-            file = files[np.argmax(nums)]
-        with open(file, 'r') as fp:
-            mcq = json.load(fp)
-        mcqs.append(mcq)
+            iter_files = glob.glob(f"{question_path}/0_5_qa_iter*")
+            if not iter_files:
+                raise FileNotFoundError(f"No iteration files found for question {key_question}")
+            
+            iter_numbers = [int(Path(f).stem.split("_")[4]) for f in iter_files]
+            file_path = iter_files[np.argmax(iter_numbers)]  # Select latest iteration
 
-        mcqs_question.append(mcq['question_stem'])
-        mcqs_choices.append({
-            'choices':
-            dict(choices=mcq['choices'], correct_index=mcq['correct_index'])
+        # Load MCQ data
+        with open(file_path, "r") as fp:
+            mcq = json.load(fp)
+
+        # Append data to list for better performance
+        data.append({
+            "key_question": key_question,
+            "question": mcq["question_stem"],
+            "choices": mcq["choices"],
+            "correct_index": mcq["correct_index"],
+            "code": row["code"],
+            "run_id": int(run_number),
         })
 
-    return mcqs, mcqs_question, mcqs_choices, keys_question, df_results, codes
+    return pd.DataFrame(data)
 
 
-def save_refinebot_mcqs(cfg):
+def save_refinebot_mcqs(cfg, run_numbers, run_seeds):
     """
-    Save the results of different seeds of the RefineBot into a single dataset
+    Save the results of different seeds of the RefineBot into a single dataset.
     """
-    final_df = pd.DataFrame(columns=['key_question', 'question', 'choices', 'code'])
-    # compile the results from different seeds into the final dataset
-    mcqs, mcqs_question, mcqs_choices, keys_question, df_results, codes = get_refinebot_mcqs(
-        cfg)
-    final_df['key_question'] = keys_question
-    final_df['question'] = mcqs_question
-    final_df['choices'] = mcqs_choices
-    final_df['code'] = codes
-    # save the final dataset to a csv file
-    f_save = cfg.run.results_dir / f"{cfg.dataset_name}_refinebot.csv"
+    final_df = []
+
+    # Compile the results from different seeds into a single dataset
+    for run_id, run_seed in zip(run_numbers, run_seeds):
+        run_df = get_refinebot_mcqs(cfg, run_number=run_id)
+        run_df["seed"] = run_seed
+        final_df.append(run_df)
+
+    # Concatenate all runs into a single DataFrame
+    final_df = pd.concat(final_df, ignore_index=True)
+
+    # Save to CSV
+    f_save = os.path.join(cfg.run.results_dir, cfg.run.name, f"{cfg.dataset_name}_refinebot_dataset.csv")
     final_df.to_csv(f_save, index=False)
+
+    print("*" * 80)
+    print(f"Final dataset saved to {f_save}")
 
     
     
