@@ -102,8 +102,6 @@ def eval_qa(dataset,
         else:
             preds.append(-1)
 
-    # save response
-    ipdb.set_trace()
 
     gts = np.array(gts)
     preds = np.array(preds)
@@ -155,7 +153,7 @@ def _run_batch_chunked(batch_prompts_text, batch_prompts_imgs, seeds, model, num
         responses.extend(chunk_responses)
         
         if i + chunk_size < len(batch_prompts_text):  # Don't sleep after the last batch
-            print(f"Sleeping for {wait_seconds} seconds for rate-limited model [{model}df]")
+            print(f"Sleeping for {wait_seconds} seconds for rate-limited model [{model}]")
             time.sleep(wait_seconds)
 
     return responses
