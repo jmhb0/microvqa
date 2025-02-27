@@ -1,0 +1,10 @@
+# Core dependencies
+numpy
+pandas
+datasets
+pillow
+click>=8.0.0
+tqdm
+openai>=1.0.0
+lmdb
+ipdb

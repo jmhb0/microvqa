@@ -1,5 +1,11 @@
 # Evaluation
+From the root directory, run:
+```
+pip install -r eval/requirements.txt
+```
+
 ## Accessing the dataset 
+With HF datasets installed:
 ```
 from datasets import load_dataset
 dataset = load_dataset("jmhb/microvqa")['train']
@@ -8,7 +14,7 @@ See the dataset details in [huggingface.co/datasets/jmhb/microvqa](https://huggi
 
 
 ## Running evaluation via API
-Run for one model:
+From root directory, run eval for one model:
 ```
 python -m eval.run_eval --model gpt-4o-2024-11-20 --subset 0 --no_image False --seed 0 
 ```

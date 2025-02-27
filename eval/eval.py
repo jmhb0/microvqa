@@ -10,6 +10,7 @@ from eval.openai_api import call_gpt_batch
 import pandas as pd
 from pathlib import Path
 import time
+from tqdm import tqdm
 
 # based on prompt from MMLU-pro https://github.com/TIGER-AI-Lab/MMLU-Pro/blob/b7b9ffd84b2c21a5bfcf174fc65e5e6d74ca09a8/evaluate_from_api.py",
 PROMPT_TEMPLATE = """\
@@ -50,7 +51,8 @@ def eval_qa(dataset,
     batch_prompts_imgs = []
     gts = []
 
-    for i, row in enumerate(dataset):
+    print(f"Preparing all the prompts")
+    for i, row in tqdm(enumerate(dataset), total=len(dataset)):
         if no_image:
             prompt = PROMPT_TEMPLATE_NO_IMAGE
         else:
