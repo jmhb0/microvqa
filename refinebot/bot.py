@@ -205,13 +205,12 @@ def revise_mcq(cfg: OmegaConf,
     for iteration in range(max_iters):
         logging.info(f"[{log_str}] Running iteration {iteration}")
 
-        # log the current queastion and choices
+        # log the current question and choices
         data.choices_.append(choices)
         data.question_stems_.append(question_stem)
         _log_qa(dir_log, iteration, question_stem, choices, correct_index)
 
         # evaluate current question without an image
-        # LBS: around here calling multiple LLMs?
         results_eval_mcq_noimage, is_eval_is_incorrect, eval_messages = evaluate_mcq_noimage(question_stem,
                                                        choices,
                                                        correct_index,
