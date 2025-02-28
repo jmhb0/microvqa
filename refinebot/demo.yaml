@@ -1,8 +1,8 @@
 dataset_name: "demo"
 run:
   name: "demo_experiment"
-  seeds: [0, 1]
-  max_iters: 2
+  seeds: [0, 1] # seeds to run the experiment with
+  max_iters: 2 # maximum number of iterations for rewriting the question
   multiprocessing: True
   max_workers: 48
   shuffle: False
@@ -10,8 +10,8 @@ run:
   results_dir: "results"
 eval:
   model: "gpt-4o-mini-2024-07-18"
-  prompt_key: 0
-  multi_eval: 1
+  prompt_key: 0 
+  multi_eval: 1 # times to evaluate the model
 reflect:
   model: "gpt-4o-mini-2024-07-18"
   prompt_key: 0
@@ -19,7 +19,7 @@ rewrite:
   model: "gpt-4o-mini-2024-07-18"
   prompt_key: 0
   strucured_output_key: 0
-  n_choices_target: 4
+  n_choices_target: 4 # number of choices to generate in the rewrite
 check_rewrite:
   model: "gpt-4o-mini-2024-07-18"
   prompt_key: 0
