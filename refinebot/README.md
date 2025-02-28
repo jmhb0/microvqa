@@ -12,5 +12,5 @@ export OPENAI_API_KEY=<your key here>
 ```
 python demo.py
 ```
-
+6. **Output.** The final dataset will be stored as a .csv file within the experiment folder e.g. `results/<run.name>/<dataset_name>`. Each run creates a version of the questions and logs the RefineBot output at each step. The results of each run are compiled into `_samples_sorted.csv` with an overall log and statistics file.
 
