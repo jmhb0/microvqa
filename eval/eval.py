@@ -65,8 +65,11 @@ def eval_qa(dataset,
         batch_prompts_text.append(prompt)
         gts.append(row['correct_index'])
 
-        imgs = [np.array(img) for img in row['images_list']]
-        batch_prompts_imgs.append(imgs)
+        if not no_image:
+            imgs = [np.array(img) for img in row['images_list']]
+            batch_prompts_imgs.append(imgs)
+        else: 
+            batch_prompts_imgs = None
 
     assert len(batch_prompts_text) == len(dataset)
 
@@ -76,8 +79,6 @@ def eval_qa(dataset,
 
     # call llm api
     seeds = [seed] * len(batch_prompts_text)
-    if no_image:
-        batch_prompts_imgs = None
     print(f"Running {model} on {len(batch_prompts_text)} samples")
     if not is_rate_limited:
         responses = call_gpt_batch(texts=batch_prompts_text,
