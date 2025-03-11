@@ -1,5 +1,17 @@
 taxonomy:
   revised:
+    -1: # Unknown
+      - unknown
+      - unsure
+      - not sure
+      - not available
+      - not performed
+      - uncertain
+      - not certain
+      - don't know
+      - not known
+      - N/A
+      - not applicable
     1: # Recall/Remember
       - recall
       - recalling
