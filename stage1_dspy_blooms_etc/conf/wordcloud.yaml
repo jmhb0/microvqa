@@ -1,0 +1,8 @@
+config_1:
+  "cryo-EM":
+    - "cryo-EM"
+    - "cryoEM"
+    - "cryo electron"
+    - "cryo electron microscopy"
+    - "cryo-electron microscopy"
+  # TODO: Add more words here
