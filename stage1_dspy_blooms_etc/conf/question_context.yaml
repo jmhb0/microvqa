@@ -1,0 +1,502 @@
+nbme:
+  basic_rules_for_writing_one_best_answer_multiple_choice: |
+    Summary of Basic Rules for Writing One-Best-Answer Items:
+    - Focus on Important Concepts:
+        Each item should address a significant concept or testing point.
+        Use a clear blueprint or test specifications to ensure coverage of all essential topics.
+    - Assess Higher-Order Thinking, Not Recall:
+        Design items that test application and synthesis of knowledge.
+        Provide an appropriate stimulus (e.g., an experimental vignette) to offer context.
+        Avoid questions that merely require recall of isolated facts.
+    - Craft Clear and Focused Lead-ins:
+        The question stem should be specific, closed-ended, and unambiguous.
+        Test-takers should be able to answer the question based solely on the vignette and lead-in.
+        Steer clear of open-ended or vague lead-ins.
+    - Ensure Homogeneous and Plausible Options:
+        All answer choices should be consistent in content and format.
+        Distractors should be plausible and challenging to prevent easy elimination.
+        The correct answer should be the most accurate among equally plausible options.
+    - Review for Technical Flaws:
+        Check that the item's structure is logical, with the vignette preceding the lead-in.
+        Use only necessary context and avoid clues that could reveal the answer.
+        During review, ask:
+          + Can the question be answered without the options?
+          + Is the phrasing clear and free from confusion?
+          + Are there unintended clues benefiting test-wise students?
+        Have a knowledgeable colleague review the item for content, clarity, and appropriateness.
+#  determining_level_of_cognition_for_multiple_choice: |
+#    Levels of Cognitive Assessment in Test Items:
+#    1. Recall of a Fact:
+#       - Assesses rote memory without requiring application.
+#       - Requires test-takers to recall isolated facts, concepts, or principles.
+#       - Example: "Which findings are most likely in patients with pulmonary embolism?"
+#       - Often less practical in real-world scenarios.
+#
+#    2. Application of Knowledge:
+#      - Requires applying knowledge to interpret information and reach conclusions.
+#      - Involves identifying relevant information and integrating it with existing knowledge.
+#      - Often presented as vignette-based items with detailed scenarios.
+#      - Encourages higher-order thinking skills.
+#
+#    Choosing Between Recall and Application Items:
+#    1. Recall Items:
+#       - Best suited for formative assessments or evaluating simpler concepts.
+#       - Useful when scenarios are not applicable.
+#    2. Application Items:
+#       - Preferable for medium- to high-stakes summative examinations.
+#       - Ideal for assessing higher-order thinking and practical application of knowledge.
+  general_rules_for_one_best_answer_multiple_choice: |
+    Summary of General Rules for One-Best-Answer Multiple-Choice Items:
+      - Clarity and Precision: Ensure that item and option text is clear and unambiguous. Avoid imprecise phrases like "is associated with," cueing words such as "may" or "could be," and vague terms like "usually" or "frequently."
+      - Focused Lead-in: The lead-in should be closed and focused, allowing test-takers to answer correctly without seeing the options ("cover-the-options" rule).
+      - Homogeneous Options: All options should be similar in content and structure, enabling them to be judged as entirely true or false on a single dimension.
+      - Incorrect Options: Incorrect options can be either partially or wholly incorrect. They should be plausible and challenging to prevent easy elimination.
+  guideline_writing_lead_in_for_one_best_answer_multiple_choice: |
+    # Guideline for writing item lead-in
+    The lead-in should consist of a single, clearly formulated question so that the test-taker can answer without looking at the options. As mentioned previously, satisfying the "cover-the-options" rule is an essential component of a good question.
+  one_best_answer_items: |
+    One-Best-Answer Items: These are multiple-choice questions with a stem (often including a vignette), a focused lead-in question, and several options—one correct answer and several distractors. Distractors should be directly related to the lead-in and homogeneous with the correct answer. Incorrect options may be partially true but are less correct than the keyed answer. The test-taker is instructed to select the "most likely" or "best" answer among options that can be ranked along a single continuum.
+    Homogeneous Options: All options should address the lead-in in the same manner and be rankable along a single dimension. Heterogeneous options that cover miscellaneous facts and cannot be ordered from least to most correct are flawed. A well-designed item allows the test-taker to understand the question without relying on the options.
+    Cover-the-Options Rule: A properly focused lead-in should enable the test-taker to answer the question without seeing the options. Covering the options and attempting to answer the item is a good way to check if this rule has been followed.
+  tips_for_mc_question_using_blooms: |
+    # Essential Components for Writing Multiple-Choice Tests Based on the Revised Bloom's Taxonomy:
+
+    Use Plausible Distractors: Craft convincing incorrect answers to effectively assess learners' understanding and ability to apply knowledge.
+    Integrate Charts and Graphs: Include visual data for interpretation to test analyzing skills.
+    Transform Verbs into Nouns: Modify questions to test creating and evaluating skills by asking for the best description of a concept.
+    Use Examples or Stories: Provide scenarios that require learners to apply, understand, and analyze information.
+    Employ Multilevel Thinking Questions: Use phrases like "most appropriate" or "most important" to assess judgment skills and deep comprehension.
+  shape_of_a_good_one_best_answer_multiple_choice: |
+    # Summary of Guidelines for Crafting Effective Multiple-Choice Items:    
+    - Focus on Important Concepts: Ensure the question addresses significant ideas rather than trivial details.
+    - Self-Contained Stem:
+        Include only the relevant facts within the stem.
+        Design the stem so it can be answered without referring to the options.
+        Avoid adding extra information in the answer choices.
+     - Clarity and Simplicity:
+        Keep the question straightforward, not tricky or overly complex.
+        Use positive phrasing; avoid negatives like "except" or "not" in the lead-in.    
+     - Structure of the Item:
+        Vignette: Provide necessary context or details without giving away the answer.
+        Lead-in: Clearly pose the question to be answered.
+        Answer Choices: Offer a concise and uniform list of options, adhering to the "cover-the-options" rule.
+#  irrelevant_difficulty_in_multiple_choice: |
+#    # Technical item flaws can negatively impact test question quality by either:
+#      1. Adding irrelevant difficulty: Confusing all test-takers and introducing construct-irrelevant variance.
+#      2. Cueing testwise individuals: Helping savvy test-takers guess the correct answer without knowing the content.
+#
+#    # Common flaws related to irrelevant difficulty and their solutions:
+#    - Long, complex options
+#        Solution: Move common text to the stem, use parallel construction, and shorten options.
+#
+#    - Tricky or unnecessarily complicated stems
+#        Solution: Include only necessary content and avoid teaching statements.
+#
+#    - Inconsistent use of numeric ranges
+#        Solution: Avoid overlapping options and specify if seeking a minimum or maximum value.
+#
+#    - Vague terms
+#        Solution: Avoid frequency terms like "usually" or "often"; use precise language.
+#
+#    - "None of the above" options
+#        Solution: Replace with specific actions (e.g., "No intervention needed").
+#
+#    - Nonparallel options
+#        Solution: Edit options to be parallel in grammatical form and structure.
+#
+#    - Negatively structured stems (e.g., "Each of the following EXCEPT")
+#        Solution: Revise the lead-in to a positive structure and, if possible, use correct options to create a scenario.
+#  cues_that_give_away_the_answer: |
+#    # Technical item flaws can negatively impact test question quality by either:
+#      1. Adding irrelevant difficulty: Confusing all test-takers and introducing construct-irrelevant variance.
+#      2. Cueing testwise individuals: Helping savvy test-takers guess the correct answer without knowing the content.
+#
+#    # Common flaws related to irrelevant difficulty and their solutions:
+#    - Collectively Exhaustive Options: A subset of options covers all possibilities, making the correct answer more apparent.
+#        Solution: Replace at least one option in the subset and avoid creating option pairs.
+#
+#    - Absolute Terms ("always," "never"): These terms can signal the correct answer.
+#        Solution: Eliminate absolute terms and use focused lead-ins with short, homogeneous options.
+#
+#    - Grammatical Clues: Inconsistencies in grammar between the stem and options can hint at the answer.
+#        Solution: Ensure all options are grammatically consistent and use closed lead-ins.
+#
+#    - Correct Answer Stands Out: The correct option is noticeably longer or more detailed.
+#        Solution: Revise all options to be of equal length and remove unnecessary language.
+#
+#    - Word Repeats (Clang Clues): Repetition of words from the stem in the correct option.
+#        Solution: Replace repeated words in either the stem or options, or include them in all options.
+#
+#    - Convergence: The correct answer combines terms from multiple other options.
+#        Solution: Balance the use of terms across all options.
+blooms:
+  blooms_revised: |
+    # Revised Bloom’s Taxonomy (2001)
+    A group of educational researchers and cognitive psychologists developed the new and revised Bloom’s Taxonomy framework in 2001 to be more action-oriented. This way, students work their way through a series of verbs to meet learning objectives. Below are descriptions of each of the levels in revised Bloom’s Taxonomy:
+     - Remember/Recall: To bring an awareness of the concept to learners’ minds. Simple image identification or basic fact recall.
+     - Understand/Comprehend: To summarize or restate the information in a particular way. Basic image interpretation or understanding 
+     - Apply: The ability to use learned material in new and concrete situations.
+     - Analyze: Understanding the underlying structure of knowledge to be able to distinguish between fact and opinion.
+     - Synthesis/Evaluate: Making judgments about the value of ideas, theories, items and materials.
+     - Create: Reorganizing concepts into new structures or patterns through generating, producing or planning.
+  blooms_question_stems: |
+    # Bloom's Taxonomy Categorization for Biomedical Image-Based Reasoning:
+    - Recall: Remembering basic facts and identifying elements in images.
+    - Examples:
+      "What is the cellular structure shown in this image?"
+      "Where is this type of tissue commonly found?"
+      "Identify the cell type shown in the micrograph."
+      "List three characteristics of this tissue type."
+      "What is the function of the structure labeled 'A'?"
+    - Comprehension: Understanding and interpreting structures without relating them to broader concepts.
+    - Examples:
+      "How would you classify this tissue based on its structure?"
+      "Explain the significance of the staining pattern observed."
+      "Summarize the features seen in this slide."
+      "Identify and describe the location of specialized cells in this tissue."
+      "How can you explain the organization of cells in this image?"
+    - Application: Applying knowledge to new situations; requires additional functional or structural understanding.
+    - Examples:
+      "How would you use your knowledge to identify abnormalities in this image?"
+      "What approach would you use to differentiate between these two cell types?"
+      "How can you use staining techniques to identify specific cells?"
+      "What elements would you analyze to confirm a diagnosis?"
+      "What would result if the highlighted area was damaged?"
+    - Analysis: Examining and connecting structure and function; critically evaluating relationships.
+    - Examples:
+      "What are the key features of the cells, and how do they relate to their function?"
+      "How is the tissue architecture related to its physiological role?"
+      "What conclusions can you draw about the disease state from this image?"
+      "How can you distinguish between benign and malignant features here?"
+      "Why do you think these structural changes have occurred?"
+    - Synthesis/Evaluation: Predicting relationships and interactions; judging and critiquing knowledge in new situations.
+    - Examples:
+      "How would you improve patient outcomes based on these findings?"
+      "What alternative diagnoses can you propose given the image data?"
+      "How would you design a follow-up study to test your hypothesis?"
+      "Predict the outcome of disease progression based on the evidence."
+      "How can a model be constructed to change our understanding of this tissue?"
+  summary_blooms_biomedical_image_multiple_choice: |
+    # Summary of Revised Bloom's classification for biomedical multiple-choice image questions:
+    Level 1: Recall
+        - Focus: Remembering basic facts, definitions, and identifying objects in images.
+        - Skills Assessed: Identify, Recall, List, Recognize, Label.
+        - Characteristics: Requires simple information recall or image recognition.
+        - Example Question Stems:
+            "What is...?"
+            "Identify the..."
+            "List the characteristics of..."
+        - Examples:
+            "Identify the parts of a eukaryotic cell."
+            "What is the cellular structure shown in this image?"
+
+    Level 2: Comprehension (Understand)
+        - Focus: Understanding concepts; interpreting images without broader context; explaining in one's own words.
+        - Skills Assessed: Describe, Explain, Classify, Locate.
+        - Characteristics: Requires understanding of concepts or terms; simple image interpretation.
+        - Example Question Stems:
+            "How would you classify...?"
+            "Explain the significance of..."
+        - Examples:
+            "Describe nuclear transport to a layperson."
+            "Explain the significance of the staining pattern observed."
+
+    Level 3: Application
+        - Focus: Applying knowledge to new situations; advanced visual identification; predicting outcomes.
+        - Skills Assessed: Apply, Connect, Predict.
+        - Characteristics: Applying knowledge to new contexts; predicting outcomes of changes.
+        - Example Question Stems:
+            "How would you use your knowledge to...?"
+            "What would result if...?"
+        - Examples:
+            "Predict what happens to X if Y increases."
+            "What would result if the highlighted area was damaged?"
+
+    Level 4: Analysis
+        - Focus: Analyzing comprehensive knowledge; connecting structure and function; interpreting data.
+        - Skills Assessed: Analyze, Infer, Advanced Classification.
+        - Characteristics: Requires data interpretation; drawing conclusions.
+        - Example Question Stems:
+            "What conclusions can you draw about...?"
+            "How can you distinguish between...?"
+        - Examples:
+            "Interpret data, graphs, or figures."
+            "Why do you think these structural changes have occurred?"
+
+    Level 5: Synthesis/Evaluation
+        - Focus: Predicting relationships; judging and critiquing in new situations; scientific or clinical judgment.
+        - Skills Assessed: Predict, Judge, Critique, Decide, Evaluate, Synthesize, Create.
+        - Characteristics: Assessing information relative to arguments; developing hypotheses; designing experiments.
+        - Example Question Stems:
+            "What changes would you make to...?"
+            "Predict the outcome of..."
+        - Examples:
+            "Develop a hypothesis."
+            "Design an experiment."
+            "How would you improve patient outcomes based on these findings?"
+  blooms_biology_histology_image: |
+    # Revised Bloom's classification applied to biology or histology multiple-choice image questions:
+    Level 1: Recall
+        Focus: Recall or identification of objects in images; remembering basic definitions, facts, and terms.
+        Skills Assessed: Identify, Recall, List, Recognize, Label, Memorization.
+        Characteristics of Questions: Requires simple information recall or image recognition.
+        Common Question Stems:
+          - "What is...?"
+          - "Where is...?"
+          - "When does... occur?"
+          - "Identify the..."
+          - "List the characteristics of..."
+          - "Define the term associated with..."
+        Example Questions:
+          - "Identify the parts of a eukaryotic cell."
+          - "What is the cellular structure shown in this image?"
+          - "Identify the correct definition of osmosis."
+          - "List three characteristics of this tissue type."
+    Level 2: Comprehension (Understand)
+      Focus: Understanding the organization of cells and tissues; interpreting images without broader context; explaining concepts in one's own words.
+      Skills Assessed: Describe, Explain, Identify, Classify, Locate.
+      Characteristics of Questions: Requires understanding of concepts or terms; interpreting images in simple contexts.
+      Common Question Stems:
+          - "How would you classify...?"
+          - "How does this image compare to...?"
+          - "What is the main idea illustrated by...?"
+          - "Explain the significance of..."
+          - "Summarize the features seen in..."
+      Example Questions:
+          - "Describe nuclear transport to a layperson."
+          - "Provide an example of a cell signaling pathway."
+          - "How can you explain the organization of cells in this image?"
+          - "Explain the significance of the staining pattern observed."
+    Level 3: Application
+      Focus: Applying knowledge to new situations; advanced visual identification requiring deep understanding and application; predicting outcomes using multiple pieces of information.
+      Skills Assessed: Apply, Connect, Predict.
+      Characteristics of Questions: Applying knowledge to new contexts; predicting outcomes given new situations or system changes.
+      Common Question Stems:
+          - "How would you use your knowledge to...?"
+          - "What examples can you find that demonstrate...?"
+          - "How would you solve...?"
+          - "What approach would you use to differentiate...?"
+          - "How would you apply what you've learned to explain...?"
+      Example Questions:
+          - "Predict what happens to X if Y increases."
+          - "How would you use your knowledge to identify abnormalities in this image?"
+          - "What would result if the highlighted area was damaged?"
+          - "How can you use staining techniques to identify specific cells?"
+    Level 4: Analysis
+    Focus: Analyzing comprehensive knowledge; connecting structure and function within cells; interpreting data and drawing conclusions.
+    Skills Assessed: Analyze, Infer, Advanced Classification.
+    Characteristics of Questions: Requires interpretation of data; selecting the best conclusion.
+    Common Question Stems:
+      - "What are the key features of... and how do they relate to...?"
+      - "How is... related to its function?"
+      - "Why do you think...?"
+      - "What conclusions can you draw about...?"
+      - "How can you distinguish between...?"
+    Example Questions:
+      - "Interpret data, graphs, or figures."
+      - "Make a diagnosis or analyze a case study."
+      - "Why do you think these structural changes have occurred?"
+      - "How can you distinguish between benign and malignant features here?"
+    Level 5: Synthesis/Evaluation
+    Focus: Predicting relationships between different cell types or tissues; judging and critiquing multiple elements in new situations; using scientific or clinical judgment.
+    Skills Assessed: Predict, Judge, Critique, Decide, Evaluate, Synthesize, Create.
+    Characteristics of Questions: Requires assessment of information relative to an argument; developing hypotheses; designing experiments; evaluating models.
+    Common Question Stems:
+      - "What changes would you make to...?"
+      - "How would you improve...?"
+      - "What would happen if...?"
+      - "What alternatives can you propose...?"
+      - "How would you evaluate the effectiveness of...?"
+      - "Predict the outcome of..."
+    Example Questions:
+      - "Develop a hypothesis."
+      - "Design an experiment."
+      - "How would you improve patient outcomes based on these findings?"
+      - "Predict the outcome of disease progression based on the evidence."
+  blooms_taxonomy_verb_chart: |
+    # Bloom's Taxonomy Verb Chart for Writing Multiple-Choice Questions:
+      1) Recall: Retrieving relevant knowledge from memory.
+          Verbs: Cite, Define, List, Recall, Remember, Recognize, Repeat, State.
+      2) Comprehension: Constructing meaning through interpreting and explaining.
+          Verbs: Classify, Compare, Describe, Discuss, Explain, Interpret, Understand, Summarize.
+      3) Application: Using knowledge in new situations.
+          Verbs: Apply, Demonstrate, Execute, Implement, Solve, Use.
+      4) Analysis: Breaking information into components to understand structure.
+          Verbs: Analyze, Differentiate, Examine, Organize, Outline, Question.
+      5) Synthesis/Evaluation: Making judgments based on criteria and standards.
+          Verbs: Assess, Critique, Evaluate, Justify, Support, Test.
+organism_research:
+  taxonomy_of_research_subjects: |
+    #Taxonomy of Research Subjects in Biology:
+    Anatomy
+        Study of the structure of organisms and their parts.
+        Keywords: organs, tissues, morphology, physical organization.
+
+    Biochemistry
+        Chemical processes within living organisms.
+        Keywords: proteins, enzymes, nucleic acids, metabolic pathways.
+
+    Biophysics
+        Application of physics principles to biological systems.
+        Keywords: molecular structures, energy flows, dynamics.
+
+    Biotechnology
+        Manipulation of living organisms for product development.
+        Keywords: genetic engineering, industrial applications, bio-manufacturing.
+
+    Botany
+        Scientific study of plants.
+        Keywords: plant physiology, plant genetics, ecology, photosynthesis.
+
+    Cell and Molecular Biology
+        Structure and function of cells and their molecules.
+        Keywords: cellular processes, gene expression, molecular pathways.
+
+    Conservation Biology
+        Protection of species and ecosystems.
+        Keywords: biodiversity, habitat preservation, extinction prevention.
+
+    Developmental Biology
+        Process by which organisms grow and develop.
+        Keywords: embryology, morphogenesis, genetic regulation.
+
+    Ecology
+        Relationships between organisms and their environment.
+        Keywords: ecosystems, interactions, population dynamics.
+
+    Evolutionary Biology
+        Processes driving the diversity of life over time.
+        Keywords: natural selection, speciation, adaptation, evolution.
+
+    Genetics
+        Study of heredity and gene function.
+        Keywords: DNA, inheritance, genetic variation, gene expression.
+
+    Immunology
+        Immune system in health and disease.
+        Keywords: antibodies, immune response, pathogens, vaccines.
+
+    Marine Biology
+        Study of ocean ecosystems and marine life.
+        Keywords: marine organisms, aquatic environments, ocean ecology.
+
+    Microbiology
+        Study of microorganisms.
+        Keywords: bacteria, viruses, fungi, parasites, microbial ecology.
+
+    Neurobiology
+        Structure and function of the nervous system.
+        Keywords: neurons, brain, neural circuits, cognition.
+
+    Parasitology
+        Study of parasites and host interactions.
+        Keywords: parasitic organisms, lifecycles, disease pathology.
+
+    Pharmacology
+        Drug interactions with biological systems.
+        Keywords: drug mechanisms, therapeutics, side effects, pharmacokinetics.
+
+    Physiology
+        Functions and mechanisms in living organisms.
+        Keywords: organ systems, homeostasis, bodily functions.
+
+    Structural Biology
+        Molecular structure of biological macromolecules.
+        Keywords: protein folding, nucleic acid structures, crystallography.
+
+    Systems Biology
+        Complex interactions within biological systems.
+        Keywords: computational modeling, biological networks and systems.
+
+    Virology
+        Study of viruses and viral diseases.
+        Keywords: virus structure, replication, host-virus interactions.
+
+    Zoology
+        Scientific study of animals.
+        Keywords: animal behavior, physiology, taxonomy.
+
+    Other
+        Specialized or emerging fields within biology.
+        Keywords: interdisciplinary studies, novel phenomena.
+  taxonomy_of_organisms_in_biology: |
+    # Taxonomy of Model Organisms in Biology and Biomedical Research:
+      Apis mellifera (Honeybee)
+          Social insect with complex behavior.
+          Keywords: honeybee, social behavior, ecology, pollination.
+  
+      Arabidopsis thaliana (Thale Cress)
+          Model plant organism.
+          Keywords: Arabidopsis, plant genetics, photosynthesis, hormone signaling.
+  
+      Caenorhabditis elegans (C. elegans)
+          Transparent nematode worm.
+          Keywords: worm, development, aging, programmed cell death.
+  
+      Danio rerio (Zebrafish)
+          Fish with transparent embryos.
+          Keywords: zebrafish, vertebrate development, embryology, organogenesis.
+  
+      Daphnia (Water Flea)
+          Planktonic crustacean.
+          Keywords: Daphnia, ecology, toxicology, environmental stress.
+  
+      Dictyostelium discoideum (Amoeba)
+          Social amoeba forming multicellular structures.
+          Keywords: amoeba, cell motility, signaling pathways, aggregation.
+  
+      Drosophila melanogaster (Fruit Fly)
+          Insect with rapid life cycle.
+          Keywords: fruit fly, genetics, inheritance patterns, development.
+      
+      Escherichia coli (E. coli)
+          Bacterium used in genetics and molecular biology.
+          Keywords: bacteria, gene expression, plasmids, genetic engineering.
+  
+      Gallus gallus (Chicken)
+          Bird with accessible embryos.
+          Keywords: chicken embryo, development, limb formation, vascularization.
+  
+      Homo sapiens (Human Cells)
+          Cultured human cells (e.g., HeLa, HEK293, A431, U2OS).
+          Keywords: human cells, cell lines, immortalized cell lines
+  
+      In vitro (None)
+          Purity of molecules and reactions in controlled environments without living cells or organisms.
+          Keywords: purified proteins, purified molecules, cell-free systems
+  
+      Macaca mulatta (Rhesus Monkey)
+          Non-human primate model.
+          Keywords: rhesus monkey, neuroscience, immunology, infectious diseases.
+  
+      Mus musculus (Mouse)
+          Mammalian model organism.
+          Keywords: mouse, disease models, transgenic mice, immunology.
+  
+      Rattus norvegicus (Rat)
+          Rodent used in behavioral studies.
+          Keywords: rat, pharmacology, neuroscience, physiology.
+  
+      Saccharomyces cerevisiae (Baker's Yeast)
+          Single-celled fungus, model eukaryote.
+          Keywords: yeast, fermentation, cell division, DNA repair.
+  
+      Schmidtea mediterranea (Planarian Flatworm)
+          Flatworm with regenerative abilities.
+          Keywords: planarian, regeneration, stem cells, tissue patterning.
+  
+      Sus scrofa (Pig)
+          Large mammal similar to humans.
+          Keywords: pig, organ transplantation, cardiovascular research, metabolism.
+  
+      Tetrahymena thermophila
+          Single-celled ciliate protozoan.
+          Keywords: protozoan, cilia, telomeres, epigenetics.
+  
+      Tursiops truncatus (Bottlenose Dolphin)
+          Intelligent marine mammal.
+          Keywords: dolphin, cognition, neurobiology, echolocation.
+  
+      Xenopus laevis (African Clawed Frog)
+          Amphibian with large eggs.
+          Keywords: frog, embryology, cell cycle, signal transduction.
