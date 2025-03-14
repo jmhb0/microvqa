@@ -25,5 +25,16 @@ python -m eval.run_eval --model gpt-4o-2024-11-20 --subset 0 --no_image False --
 
 Predictions are saved in `eval/results/{model}_subset_{subset}_seed_{seed}/`, including a csv of LLM responses and a text file of summary stats.
 
-The llava and llava-med models were run in a separate codebase: (TODO).
+
+## Cached LLM responses
+We already ran the evals for most models and cached the LLM calls. So you should be able to run the eval script without actaully calling anything. To use the cache, first unzip the cache file (run this in root):
+```
+unzip eval/openai_api_cache.zip -d eval/
+```
+Then run the eval script as usual. When running, there will be a counter for cache hits and misses printed `by eval/openai_api.py` that looks like:
+```
+GPT cache. Hits: 786. Misses: 0
+```
+
+
 
