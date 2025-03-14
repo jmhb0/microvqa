@@ -133,7 +133,7 @@ def eval_qa(dataset: datasets.Dataset,
     for msg in msgs:
         match = re.search(REGEX_PATTERN, msg)
         if match is not None:
-            pred = int(match.group(1)) - 1
+            pred = int(match.group(1)) - 1 # correct_index is 1-indexed but the preds are 0-indexed
             preds.append(pred)
         else:
             preds.append(-1)
@@ -141,7 +141,7 @@ def eval_qa(dataset: datasets.Dataset,
 
     gts = np.array(gts)
     preds = np.array(preds)
-    df= pd.DataFrame({
+    df = pd.DataFrame({
         'key_question': dataset['key_question'],
         'key_image': dataset['key_image'],
         'question': batch_prompts_text,
@@ -151,6 +151,7 @@ def eval_qa(dataset: datasets.Dataset,
         'pred': preds,
     })
     df['is_correct'] = (df['pred'] == df['gt'])
+    df['pred_1_indexed'] = df['pred'].apply(lambda x: x + 1 if x != -1 else -1)
 
     if results_dir is not None:
         _save_results(df, results_dir)
@@ -171,8 +172,7 @@ def _test_image_processing(batch_prompts_imgs):
                                 json_mode=False)
     msg = responses[0][0]
     print(msg)
-    ipdb.set_trace()
-    pass
+
 
 def _run_batch_chunked(batch_prompts_text, batch_prompts_imgs, seeds, model, num_threads, chunk_size=20, wait_seconds=60):
     """ Some new and experimental models do per-minute rait limiting """
@@ -220,7 +220,6 @@ def calculate_metrics(df):
     
     Returns: dictionary with results
     """
-    df['is_correct'] = (df['pred'] == df['gt'])
     valid_indices = set(range(5))  
     df_bad_responses = df[~df['pred'].isin(valid_indices)]
     bad_responses_pct = len(df_bad_responses) / len(df)
@@ -237,7 +236,5 @@ if __name__ == "__main__":
     dataset = datasets.load_dataset("jmhb/microvqa")['train']
     subset = 20
     dataset = dataset.select(range(subset))
-    preds, gts, msgs, acc = eval_qa(dataset)
+    results = eval_qa(dataset)
     print(f"Accuracy: {acc:.3f}")
-    ipdb.set_trace()
-    pass

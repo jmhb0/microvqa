@@ -160,10 +160,10 @@ def summarize_only(models, subset, no_image=False, is_stage1=False, seed=0):
     
 
 if __name__ == "__main__":
-    # main()
+    main()
 
     ## run all models
-    if 1:
+    if 0:
         subset=0
         do_summarize_only = False
         models = TESTED_MODELS
