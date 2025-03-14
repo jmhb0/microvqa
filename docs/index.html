@@ -246,29 +246,29 @@
             <p>For evaluations, it's common to start with a 'question' and 'answer' and to use an LLM to generate a good multiple-choice question, including the wrong answers that are called 'distractors'. Here we'll use a very easy biology question to demonstrate.</p>
             
             <figure class="image">
-                <img src="./static/images/bot1.pdf" style="width: 30%; max-width: 800px; height: auto;" alt="Example question generation">
+                <img src="./static/images/bot1.pdf" style="width: 100%; max-width: 800px; height: auto;" alt="Example question generation">
             </figure>
 
             <p>We found that this naive approach leads to questions that are very easy for LLMs to solve - GPT-4o could get 90% of questions correct, even without the image. Since the original questions really do need the image, we concluded that the generated questions were introducing language shortcuts, meaning LLMs could cheat and solve them using test-taking strategies. We identified 3 types of shortcuts:</p>
 
             <figure class="image">
-                <img src="./static/images/bot2.pdf" style="width: 30%; max-width: 800px; height: auto;" alt="Three types of shortcuts">
+                <img src="./static/images/bot2.pdf" style="width: 100%; max-width: 800px; height: auto;" alt="Three types of shortcuts">
             </figure>
 
-            <p><strong>Shortcut 1:</strong> The text 'gives away' the image content - the 'M' in “TOMM20” stands for 'mitochondria', so that's enough to answer the question.</p>
-            <p><strong>Shortcut 2:</strong> The LLM generates distractors that are not plausible (like 'butane'), so they can easily be eliminated.</p>
-            <p><strong>Shortcut 3:</strong> 'Language bias', a known problem in VQA (1, 2); here, 'mitochondria' is the most plausible answer because the question mentions Parkinson's disease, which frequently studies mitochondrial dysfunction.</p>
+            <p><strong>Shortcut 1:</strong> The text 'gives away' the image content  so it's trivial to answer the question.</p>
+            <p><strong>Shortcut 2:</strong> The LLM generates implausible or weak distractors.</p>
+            <p><strong>Shortcut 3:</strong> 'Language bias', is a known problem in VQA [1, 2].</p>
 
             <p>We created RefineBot to fix this (<a href="https://github.com/jmhb0/microvqa_tmp">code here</a>). The key idea is that if you give the question to the LLM without the image (box 1 below), then the LLM's chain-of-thought response will show you what language shortcut it used (box 2). Then you can simply prompt the LLM to rewrite the question in a way that removes the shortcut (boxes 3 and 4).</p>
 
             <figure class="image">
-                <img src="./static/images/bot3.pdf" style="width: 30%; max-width: 800px; height: auto;" alt="RefineBot process">
+                <img src="./static/images/bot3.pdf" style="width: 100%; max-width: 800px; height: auto;" alt="RefineBot process">
             </figure>
 
             <p>The final RefineBot system applies this basic idea in a loop, with an extra check that the revised question matches the original question.</p>
 
             <figure class="image">
-                <img src="./static/images/refinebot.pdf" style="width: 50%; max-width: 800px; height: auto;" alt="Final RefineBot system">
+                <img src="./static/images/refinebot.pdf" style="width: 40%; max-width: 800px; height: auto;" alt="Final RefineBot system">
             </figure>
 
             <p>While we designed this to deal with language shortcuts in particular, we think that a similar strategy could make any multiple-choice question harder.</p>
