@@ -103,6 +103,9 @@ def call_gpt(
         raise NotImplementedError()
     client = openai.OpenAI(base_url=base_url, api_key=api_key)
 
+    if 'grok' in model:
+        seed = 1000 # xai api seems to need a positive seed
+
     global HITS, MISSES
 
     if verbose:
@@ -211,15 +214,29 @@ def call_gpt(
     if response_format:
         kwargs['response_format'] = response_format
 
-    # if 'anthropic' not in model:
-    response = client.beta.chat.completions.parse(**kwargs)
-    # else:
-    # response = client.chat.completions.create(**kwargs)
+    try:
+        response = client.beta.chat.completions.parse(**kwargs)
+        prompt_tokens = response.usage.prompt_tokens
+        completion_tokens = response.usage.completion_tokens
+        msg = response.choices[0].message.content
 
-    prompt_tokens = response.usage.prompt_tokens
-    completion_tokens = response.usage.completion_tokens
-    msg = response.choices[0].message.content
-
+    except openai.LengthFinishReasonError as e:
+        print(f"Error: {str(e)}")
+        msg = "ERROR: response length exceeded"
+        prompt_tokens = 0
+        completion_tokens = 0
+    except TypeError as e:
+        if 'parse_chat_completion' in str(e.__traceback__):
+            print("Error: NoneType reference when handling completions error")
+            msg = "ERROR: NoneType reference in completions"
+            prompt_tokens = 0
+            completion_tokens = 0
+        else:
+            # Re-raise if it's not the specific error we're looking for
+            print("Rereaising")
+            raise
+    
+    
     response_cache = dict(msg=msg,
                           prompt_tokens=prompt_tokens,
                           completion_tokens=completion_tokens)
