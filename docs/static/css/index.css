@@ -155,3 +155,84 @@ body {
 #interpolation-image-wrapper img {
   border-radius: 5px;
 }
+
+/* Position captions at the bottom of each slide */
+.caption {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.6);
+  color: white;
+  padding: 10px 15px;
+  border-radius: 5px;
+  font-size: 16px;
+  text-align: center;
+  max-width: 80%;
+}
+
+/* Ensure the slides are positioned properly */
+.swiper-slide {
+  position: relative;
+}
+
+/* Ensure the swiper container takes full width */
+.swiper {
+  width: 100%;
+  max-width: 600px; /* Adjust as needed */
+  height: auto; /* Adjust as needed */
+  margin: auto;
+}
+
+/* Ensure images fit properly */
+.swiper-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Style the navigation buttons */
+.swiper-button-next,
+.swiper-button-prev {
+  color: white; /* Change to preferred color */
+}
+
+/* Style the pagination dots */
+.swiper-pagination-bullet {
+  background: white;
+}
+
+
+.table-container {
+  max-width: 70%; /* Reduce table width */
+  margin: auto; /* Center the table */
+}
+
+table {
+  font-size: 0.85em; /* Reduce font size */
+  width: 100%; /* Ensures table adapts */
+}
+
+th, td {
+  padding: 5px; /* Reduce padding */
+  text-align: center;
+}
+
+
+.fa-huggingface {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  background: url("../images/hf-logo.png") no-repeat center;
+  background-size: contain;
+}
+
+figure.image {
+  text-align: center;
+}
+
+figcaption {
+  font-size: 14px;
+  color: #555;
+  margin-top: 8px;
+}
