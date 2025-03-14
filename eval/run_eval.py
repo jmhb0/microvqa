@@ -47,20 +47,9 @@ MODELS_STAGE1 = [
     # random other models
     'mistralai/pixtral-large-2411',
     'google/gemini-pro-1.5',
-    # 'qwen/qwen-2-vl-72b-instruct',
+    'qwen/qwen-2-vl-72b-instruct',
     'google/gemini-2.0-flash-001',
     'o1-2024-12-17',
-
-    # 'google/gemini-2.0-flash-001',
-    # 'google/gemini-flash-1.5-8b',
-    # 'qwen/qwen-2-vl-72b-instruct',
-    # 'qwen/qwen-2-vl-7b-instruct',
-    # 'meta-llama/llama-3.2-90b-vision-instruct',
-    # 'meta-llama/llama-3.2-11b-vision-instruct',
-    # 'nvidia/llama-3.1-nemotron-70b-instruct',
-    # 'x-ai/grok-2-vision-1212',
-    # 'mistralai/pixtral-large-2411',
-    # 'mistralai/pixtral-12b',    
 ]
 
 @click.command()
@@ -171,10 +160,10 @@ def summarize_only(models, subset, no_image=False, is_stage1=False, seed=0):
     
 
 if __name__ == "__main__":
-    main()
+    # main()
 
     ## run all models
-    if 0
+    if 1:
         subset=0
         do_summarize_only = False
         models = TESTED_MODELS
