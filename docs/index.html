@@ -114,7 +114,7 @@
           <div class="column has-text-centered">
             <div class="publication-links">
               <span class="link-block">
-                <a href="https://jmhb0.github.io/assets/microvqa.pdf"
+                <a href="https://jmhb0.github.io/assets/microvqa.png"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="ai ai-arxiv"></i>
@@ -159,7 +159,7 @@
         <p class="mt-4">Two key themes in AI research are understanding reasoning in large language models (LLMs) and applying LLMs to scientific research. Our work bridges both by introducing <span class="has-text-info"><b>MicroVQA</b>, a benchmark that evaluates LLM reasoning on multiple-choice expert-curated questions about microscopy images.</span></p>
       </h2>
         <div class="has-text-centered">
-            <img src="./static/images/pull.pdf" style="width: 90%; max-width: 800px; height: auto;" alt="MicroVQA pull figure."/>
+            <img src="./static/images/pull.png" style="width: 90%; max-width: 800px; height: auto;" alt="MicroVQA pull figure."/>
         </div>
     </div>
     <div class="content">
@@ -225,11 +225,11 @@
                 <div class="swiper-pagination"></div>
             </div>
               <!-- <div class="slideshow-container" id="slideshow1">
-                <img class="slide active" src="./static/images/example1.pdf" alt="Expert visual understanding example">
+                <img class="slide active" src="./static/images/example1.png" alt="Expert visual understanding example">
                 <div class="caption"><em>Expert Visual Understanding Example</em></div>
-                <img class="slide" src="./static/images/example2.pdf" alt="Hypothesis generation example">
+                <img class="slide" src="./static/images/example2.png" alt="Hypothesis generation example">
                 <div class="caption"><em>Hypothesis Generation Example</em></div>
-                <img class="slide" src="./static/images/example3.pdf" alt="Experimental proposal example">
+                <img class="slide" src="./static/images/example3.png" alt="Experimental proposal example">
                 <div class="caption"><em>Experimental Proposal Example</em></div>
                 <button class="prev" onclick="changeSlide(-1, 'slideshow1')">&#10094;</button>
                 <button class="next" onclick="changeSlide(1, 'slideshow1')">&#10095;</button>
@@ -246,13 +246,13 @@
             <p>For evaluations, it's common to start with a 'question' and 'answer' and to use an LLM to generate a good multiple-choice question, including the wrong answers that are called 'distractors'. Here we'll use a very easy biology question to demonstrate.</p>
             
             <figure class="image">
-                <img src="./static/images/bot1.pdf" style="width: 100%; max-width: 800px; height: auto;" alt="Example question generation">
+                <img src="./static/images/bot1.png" style="width: 100%; max-width: 800px; height: auto;" alt="Example question generation">
             </figure>
 
             <p>We found that this naive approach leads to questions that are very easy for LLMs to solve - GPT-4o could get 90% of questions correct, even without the image. Since the original questions really do need the image, we concluded that the generated questions were introducing language shortcuts, meaning LLMs could cheat and solve them using test-taking strategies. We identified 3 types of shortcuts:</p>
 
             <figure class="image">
-                <img src="./static/images/bot2.pdf" style="width: 100%; max-width: 800px; height: auto;" alt="Three types of shortcuts">
+                <img src="./static/images/bot2.png" style="width: 100%; max-width: 800px; height: auto;" alt="Three types of shortcuts">
             </figure>
 
             <p><strong>Shortcut 1:</strong> The text 'gives away' the image content  so it's trivial to answer the question.</p>
@@ -262,13 +262,13 @@
             <p>We created RefineBot to fix this (<a href="https://github.com/jmhb0/microvqa_tmp">code here</a>). The key idea is that if you give the question to the LLM without the image (box 1 below), then the LLM's chain-of-thought response will show you what language shortcut it used (box 2). Then you can simply prompt the LLM to rewrite the question in a way that removes the shortcut (boxes 3 and 4).</p>
 
             <figure class="image">
-                <img src="./static/images/bot3.pdf" style="width: 100%; max-width: 800px; height: auto;" alt="RefineBot process">
+                <img src="./static/images/bot3.png" style="width: 100%; max-width: 800px; height: auto;" alt="RefineBot process">
             </figure>
 
             <p>The final RefineBot system applies this basic idea in a loop, with an extra check that the revised question matches the original question.</p>
 
             <figure class="image">
-                <img src="./static/images/refinebot.pdf" style="width: 40%; max-width: 800px; height: auto;" alt="Final RefineBot system">
+                <img src="./static/images/refinebot.png" style="width: 40%; max-width: 800px; height: auto;" alt="Final RefineBot system">
             </figure>
 
             <p>While we designed this to deal with language shortcuts in particular, we think that a similar strategy could make any multiple-choice question harder.</p>
@@ -285,7 +285,7 @@
             <p>We tested MicroVQA on current frontier models:</p>
 
             <figure class="image">
-                <img src="./static/images/table.pdf" style="width: 90%; max-width: 800px; height: auto;" alt="MicroVQA model performance table">
+                <img src="./static/images/table.png" style="width: 90%; max-width: 800px; height: auto;" alt="MicroVQA model performance table">
             </figure>
 
             <ul class="content">
@@ -313,13 +313,13 @@
               <div class="swiper mySwiper2">
                 <div class="swiper-wrapper">
                     <div class="swiper-slide">
-                        <img src="./static/images/767_157_770_anat_blooms-4_task-1_incorrect.pdf" alt="Example perception error">
+                        <img src="./static/images/767_157_770_anat_blooms-4_task-1_incorrect.png" alt="Example perception error">
                     </div>
                     <div class="swiper-slide">
-                        <img src="./static/images/806_165_809_neur_blooms-3_task-1_incorrect.pdf" alt="Example misconception (knowledge) error">
+                        <img src="./static/images/806_165_809_neur_blooms-3_task-1_incorrect.png" alt="Example misconception (knowledge) error">
                     </div>
                     <div class="swiper-slide">
-                        <img src="./static/images/771_158_774_path_blooms-2_task-2_incorrect.pdf" alt="Example overgeneralization error">
+                        <img src="./static/images/771_158_774_path_blooms-2_task-2_incorrect.png" alt="Example overgeneralization error">
                     </div>
                 </div>
                 <div class="swiper-button-next"></div>
@@ -327,11 +327,11 @@
                 <div class="swiper-pagination"></div>
               </div>
               <!-- <div class="slideshow-container" id="slideshow2">
-                <img class="slide active" src="./static/images/767_157_770_anat_blooms-4_task-1_incorrect.pdf" alt="Example perception error">
+                <img class="slide active" src="./static/images/767_157_770_anat_blooms-4_task-1_incorrect.png" alt="Example perception error">
                 <p class="has-text-centered"><em>Example perception error</em></p>
-                <img class="slide" src="./static/images/806_165_809_neur_blooms-3_task-1_incorrect.pdf" alt="Example misconception (knowledge) error">
+                <img class="slide" src="./static/images/806_165_809_neur_blooms-3_task-1_incorrect.png" alt="Example misconception (knowledge) error">
                 <p class="has-text-centered"><em>Example misconception (knowledge) error</em></p>
-                <img class="slide" src="./static/images/771_158_774_path_blooms-2_task-2_incorrect.pdf" alt="Example overgeneralization error">
+                <img class="slide" src="./static/images/771_158_774_path_blooms-2_task-2_incorrect.png" alt="Example overgeneralization error">
                 <p class="has-text-centered"><em>Example overgeneralization error</em></p>
                 <button class="prev" onclick="changeSlide(-1, 'slideshow2')">&#10094;</button>
                 <button class="next" onclick="changeSlide(1, 'slideshow2')">&#10095;</button>
@@ -370,7 +370,7 @@
             </p>
 
             <figure class="image">
-              <img src="./static/images/blooms.pdf" style="width: 60%; max-width: 800px; height: auto;" alt="Bloom's Taxonomy in MicroVQA">
+              <img src="./static/images/blooms.png" style="width: 60%; max-width: 800px; height: auto;" alt="Bloom's Taxonomy in MicroVQA">
               <figcaption style="text-align: center; font-size: 14px; color: #555; margin-top: 8px;">
                 Composition of scientific MLLM benchmarks regarding estimated Bloom's taxonomy.
               </figcaption>
