@@ -1,0 +1,33 @@
+bootstrap: null
+bootstrap_random:
+  max_bootstrapped_demos: 8
+  max_labeled_demos: 8
+  num_candidate_programs: 16
+  num_threads: 8
+  max_rounds: 1
+  max_errors: 10
+bootstrap_optuna:
+  teacher_settings: null
+  max_bootstrapped_demos: 4
+  max_labeled_demos: 16
+  max_rounds: 1
+  num_candidate_programs: 16
+  num_threads: 6
+bootstrap_fine_tune:
+  teacher_settings: null
+  multitask: true
+miprov2:
+  prompt_model: null
+  task_model: null
+  teacher_settings: null
+  max_bootstrapped_demos: 5
+  max_labeled_demos: 16
+  auto: null
+  num_candidates: 10
+  num_threads: 6
+  max_errors: 10
+  seed: 9
+  init_temperature: 1.0
+  verbose: False
+  track_stats: True
+  log_dir: null
