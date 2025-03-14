@@ -33,6 +33,7 @@ def generate_row(row):
     return row_html
 
 # Generate HTML
+df.sort_values(by="Overall", inplace=True)
 table_headers = " ".join(f"<th>{col}</th>" for col in df.columns)
 table_rows = " ".join(generate_row(row) for _, row in df.iterrows())
 
@@ -69,6 +70,7 @@ html_template = f"""
     <script>
         $(document).ready( function () {{
             $('#leaderboard').DataTable({{
+                "order": [[ {df.columns.get_loc("Overall")}, "desc" ]], // Sort by "Overall" column descending
                 "searching": false,
                 "paging": false,
                 "info": false,
