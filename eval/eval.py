@@ -35,7 +35,15 @@ Options:
 {{CHOICES}}
 """
 
-## this regex works for "the answer is (3)" or "the answer is 3"
+PROMPT_TEMPLATE_NO_IMAGE_V2 = """\
+We have a multiple choice question (with answers) and images.
+However I will not give you the question text or the images, I will only give you the choices, so please try your best to answer the question.
+Think step by step and then output the answer in the format of \"The answer is (X)\" at the end."
+
+{{CHOICES}}
+"""
+
+## this regex works for "the answer is (3)" or "the answer is 3" or "the answer is **(3)**". The latter case happened sometimes for gpt-4o and  grok and maybe some others too
 # REGEX_PATTERN = r"answer is \(?([0-9])\)?"
 ## this regex works for "the answer is (3)" or "the answer is 3" or "the answer is **(3)**". The latter case happened sometimes for gpt-4o and  grok and maybe some others too
 REGEX_PATTERN = r"answer is \*?\*?\(?([0-9])\)?\*?\*?"
@@ -48,6 +56,8 @@ def eval_qa(dataset: datasets.Dataset,
             num_threads: int = 64,
             is_rate_limited: bool = False, 
             is_stage1 = False,
+            is_noimage_v2 = False,
+            is_noimage_v3 = False,
             prompts_preloads: list = None):
     """ 
     Args:
@@ -70,10 +80,6 @@ def eval_qa(dataset: datasets.Dataset,
     if prompts_preloads is None:
 
         for i, row in tqdm(enumerate(dataset), total=len(dataset)):
-            if no_image:
-                prompt = PROMPT_TEMPLATE_NO_IMAGE
-            else:
-                prompt = PROMPT_TEMPLATE
             if not is_stage1:
                 question = row['question']
                 choices = row['choices']
@@ -82,8 +88,31 @@ def eval_qa(dataset: datasets.Dataset,
                 question = row['question_1']
                 choices = row['choices_1']
                 correct_index = row['correct_index_1']
+
+            # will not give the question text
+            if is_noimage_v2:
+                no_image = True
+                is_stage1 = False
+                prompt = PROMPT_TEMPLATE_NO_IMAGE_V2
+
+            # will take the last sentence of the question as the question text
+            elif is_noimage_v3:
+                no_image = True
+                is_stage1 = False
+                prompt = PROMPT_TEMPLATE_NO_IMAGE
+                question = _get_last_sentence_regex(question)
+
+            elif no_image:
+                prompt = PROMPT_TEMPLATE_NO_IMAGE
+
+            else:
+                prompt = PROMPT_TEMPLATE
+
+            
                 
             prompt = prompt.replace("{{QUESTION}}", question)
+
+
             choices_str = ""
             for j, ch in enumerate(choices):
                 choices_str += f"  ({j+1}): {ch}\n" # base-1 indexing
@@ -91,15 +120,17 @@ def eval_qa(dataset: datasets.Dataset,
             batch_prompts_text.append(prompt)
             gts.append(correct_index)
 
+
             if not no_image:
                 imgs = [np.array(img) for img in row['images_list']]
                 batch_prompts_imgs.append(imgs)
             else: 
                 batch_prompts_imgs = None
 
+
         assert len(batch_prompts_text) == len(dataset)
+
     else: 
-        print
         assert len(prompts_preloads) == 3
         batch_prompts_text, batch_prompts_imgs, gts = prompts_preloads
         assert len(batch_prompts_text) == len(dataset)
@@ -197,6 +228,7 @@ def _run_batch_chunked(batch_prompts_text, batch_prompts_imgs, seeds, model, num
 
     return responses
 
+
 def _save_results(df, results_dir):
     results_dir = Path(results_dir)
     results_dir.mkdir(parents=True, exist_ok=True)
@@ -229,6 +261,12 @@ def calculate_metrics(df):
         'bad_responses_pct': bad_responses_pct
     }
     return summary_results
+
+def _get_last_sentence_regex(text):
+    # Match sentences ending with period, question mark, or exclamation point
+    sentence_pattern = r'[^.!?]+[.!?]+'
+    sentences = re.findall(sentence_pattern, text)
+    return sentences[-1].strip() if sentences else ""
 
     
 
