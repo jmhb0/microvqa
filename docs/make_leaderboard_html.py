@@ -1,3 +1,14 @@
+""" 
+Put the csv into static/leaderboard/leaderboard.csv
+Run inside docs/
+Then run
+    python make_leaderboard_html.py 
+
+which puts html into static/leaderboard/leaderboard.html 
+Then the docs/index.html should have a link to static/leaderboard/leaderboard.html
+
+csv source https://docs.google.com/spreadsheets/d/1H3KKnnsoZ53Pib2KpJM_2y8n2TRvAZdDgr5kxQD93UY/edit?gid=391254289#gid=391254289
+"""
 import pandas as pd
 
 # File paths
@@ -16,7 +27,7 @@ if "Name" not in df.columns or "Link" not in df.columns or "Type" not in df.colu
 df.insert(0, "Model", df.apply(lambda row: f'<a href="{row["Link"]}" target="_blank">{row["Name"]}</a>', axis=1))
 
 # Drop unnecessary columns
-df = df.drop(columns=["name (api)", "Link", "Name + citation"])  # Keeping relevant scores
+df = df.drop(columns=["name (api)", "Link", "Name + citation", "Name"])  # Keeping relevant scores
 
 # Define color coding for the "Type" column
 type_colors = {

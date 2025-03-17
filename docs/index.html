@@ -1,10 +1,10 @@
 <!-- a comment -->
 <!DOCTYPE html>
 <html>
+
 <head>
   <meta charset="utf-8">
-  <meta name="description"
-        content="">
+  <meta name="description" content="">
   <meta name="keywords" content="ViewNeTI, Viewpoint textual inversion, diffusion, 3D">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>MicroVQA: A Multimodal Reasoning Benchmark for Microscopy-Based Scientific Research</title>
@@ -13,15 +13,14 @@
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-4G6N4R7X3Q"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
+    function gtag() { dataLayer.push(arguments); }
     gtag('js', new Date());
 
     gtag('config', 'G-4G6N4R7X3Q');
-</script> 
+  </script>
 
   <!-- Math -->
-  <script type="text/javascript"
-  src="static/js/LaTeXMathML.js">
+  <script type="text/javascript" src="static/js/LaTeXMathML.js">
   </script>
 
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
@@ -39,192 +38,238 @@
   <!-- <script src="./static/js/bulma-slider.min.js"></script> -->
   <script src="./static/js/index.js"></script>
   <!-- Include Swiper.js CDN -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
-<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
 </head>
+
 <body>
 
 
-<section class="hero">
-  <div class="hero-body">
-    <div class="container is-max-desktop">
-      <div class="columns is-centered">
-        <div class="column has-text-centered">
-          <h1 class="title is-2 publication-title">MicroVQA: A Multimodal Reasoning Benchmark for Microscopy-Based Scientific Research</h1>
-          <h3 class="title is-4">CVPR 2025</h3>
-          <div class="is-size-5 publication-authors">
-            <span class="author-block">
-              <a href="https://jmhb0.github.io">James Burgess</a>*<sup>1</sup>,</span>
-            <span class="author-block">
-              <a href="https://www.linkedin.com/in/jeff-nirschl-56700918/">Jeffrey J Nirschl</a>*<sup>1</sup>,</span>
-            <span class="author-block">
-              <a href="https://laubravo.github.io">Laura Bravo-Sánchez</a>*<sup>1</sup>,</span>
-            <span class="author-block">
-              <a href="https://www.linkedin.com/in/ale9806/">Alejandro Lozano</a><sup>1</sup>,</span>
-            <span class="author-block">
-              <a href="https://www.linkedin.com/in/sanket-gupte-9b753b9a/">Sanket Rajan Gupte</a><sup>1</sup>,</span>
-            <span class="author-block">
-              <a href="https://scholar.google.com/citations?user=f2XUw78AAAAJ&hl=en">Jesus G. Galaz-Montoya</a><sup>1</sup>,</span>
-            <span class="author-block">
-              <a href="https://cs.stanford.edu/~yuhuiz/">Yuhui Zhang</a><sup>1</sup>,</span>
-            <span class="author-block">
-              <a href="https://suyccc.github.io">Yuchang Su</a><sup>2</sup>,</span>
-            <span class="author-block">
-              <a href="https://www.linkedin.com/in/disha-bhowmik/">Disha Bhowmik</a><sup>3</sup>,</span>
-            <span class="author-block">
-              <a href="https://www.linkedin.com/in/zach-coman-4699a0178/">Zachary Coman</a><sup>3</sup>,</span>
-            <span class="author-block">
-              <a href="https://www.linkedin.com/in/sarina-hasan-20734016b/">Sarina M. Hasan</a><sup>4</sup>,</span>
-            <span class="author-block">
-              <a href="https://lundberglab.stanford.edu">Alexandra Johannesson</a><sup>5</sup>,</span>
-            <span class="author-block">
-              <a href="https://www.linkedin.com/in/wleineweber/">William D. Leineweber</a><sup>1</sup>,</span>
-            <span class="author-block">
-              <a href="https://www.linkedin.com/in/malvika-nair-814197209/">Malvika G Nair</a><sup>3</sup>,</span>
-            <span class="author-block">
-              <a href="https://cohenlaboratory.web.unc.edu/people/">Ridhi Yarlagadda</a><sup>3</sup>,</span>1
-            <span class="author-block">
-              <a href="https://www.linkedin.com/in/czuraski/">Connor Zuraski</a><sup>1</sup>,</span>
-            <span class="author-block">
-              <a href="https://www.wahchiulab.org/about">Wah Chiu</a><sup>1</sup>,</span>
-            <span class="author-block">
-              <a href="https://cohenlaboratory.web.unc.edu">Sarah Cohen</a><sup>3</sup>,</span>
-            <span class="author-block">
-              <a href="https://scholar.google.de/citations?hl=sk&user=ONpdBm8AAAAJ&view_op=list_works&sortby=pubdate">Jan N. Hansen</a><sup>1</sup>,</span>
-            <span class="author-block">
-              <a href="https://www.czbiohub.org/sf/person/manuel-leonetti/">Manuel D Leonetti</a><sup>6</sup>,</span>
-            <span class="author-block">
-              <a href="https://www.linkedin.com/in/chad-liu-14a77749/">Chad Liu</a><sup>6</sup>,</span>
-            <span class="author-block">
-              <a href="https://lundberglab.stanford.edu">Emma Lundberg</a><sup>6</sup>,</span>
-            <span class="author-block">
-              <a href="https://ai.stanford.edu/~syyeung/">Serena Yeung-Levy</a><sup>1</sup>
-            </span>
-          </div>
-
-          <div class="is-size-5 publication-authors">
-            <span class="author-block"><sup>1</sup>Stanford University,</span>
-            <span class="author-block"><sup>2</sup>Tsinghua University,</span>
-            <span class="author-block"><sup>3</sup>University of North Carolina at Chapel Hill,</span>
-            <span class="author-block"><sup>4</sup>Princeton University</span>
-            <span class="author-block"><sup>5</sup>KTH Royal Institute of Technology</span>
-            <span class="author-block"><sup>6</sup>Chan Zuckerberg Biohub Network</span>
-          </div>
-
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
           <div class="column has-text-centered">
-            <div class="publication-links">
-              <span class="link-block">
-                <a href="https://jmhb0.github.io/assets/microvqa.png"
-                   class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                      <i class="ai ai-arxiv"></i>
-                  </span>
-                  <span>PDF</span>
-                </a>
-              </span>
-              <!-- Code Link -->
-              <span class="link-block">
-                <a href="https://github.com/jmhb0/microvqa_tmp"
-                   class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                      <i class="fab fa-github"></i>
-                  </span>
-                  <span>Code</span>
-                  </a>
-              </span>
-              <!-- Dataset Link. -->
-              <span class="link-block">
-                <a href="https://huggingface.co/datasets/jmhb/microvqa"
-                   class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                      <!-- <i class="fab fa-github"></i> -->
-                      <i class="fa-huggingface"></i>
-                  </span>
-                  <span>Dataset</span>
-                  </a>
+            <h1 class="title is-2 publication-title">MicroVQA: A Multimodal Reasoning Benchmark for Microscopy-Based
+              Scientific Research</h1>
+            <h3 class="title is-4">CVPR 2025</h3>
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">
+                <a href="https://jmhb0.github.io">James Burgess</a>*<sup>1</sup>,</span>
+              <span class="author-block">
+                <a href="https://www.linkedin.com/in/jeff-nirschl-56700918/">Jeffrey J Nirschl</a>*<sup>1</sup>,</span>
+              <span class="author-block">
+                <a href="https://laubravo.github.io">Laura Bravo-Sánchez</a>*<sup>1</sup>,</span>
+              <span class="author-block">
+                <a href="https://www.linkedin.com/in/ale9806/">Alejandro Lozano</a><sup>1</sup>,</span>
+              <span class="author-block">
+                <a href="https://www.linkedin.com/in/sanket-gupte-9b753b9a/">Sanket Rajan Gupte</a><sup>1</sup>,</span>
+              <span class="author-block">
+                <a href="https://scholar.google.com/citations?user=f2XUw78AAAAJ&hl=en">Jesus G.
+                  Galaz-Montoya</a><sup>1</sup>,</span>
+              <span class="author-block">
+                <a href="https://cs.stanford.edu/~yuhuiz/">Yuhui Zhang</a><sup>1</sup>,</span>
+              <span class="author-block">
+                <a href="https://suyccc.github.io">Yuchang Su</a><sup>2</sup>,</span>
+              <span class="author-block">
+                <a href="https://www.linkedin.com/in/disha-bhowmik/">Disha Bhowmik</a><sup>3</sup>,</span>
+              <span class="author-block">
+                <a href="https://www.linkedin.com/in/zach-coman-4699a0178/">Zachary Coman</a><sup>3</sup>,</span>
+              <span class="author-block">
+                <a href="https://www.linkedin.com/in/sarina-hasan-20734016b/">Sarina M. Hasan</a><sup>4</sup>,</span>
+              <span class="author-block">
+                <a href="https://lundberglab.stanford.edu">Alexandra Johannesson</a><sup>5</sup>,</span>
+              <span class="author-block">
+                <a href="https://www.linkedin.com/in/wleineweber/">William D. Leineweber</a><sup>1</sup>,</span>
+              <span class="author-block">
+                <a href="https://www.linkedin.com/in/malvika-nair-814197209/">Malvika G Nair</a><sup>3</sup>,</span>
+              <span class="author-block">
+                <a href="https://cohenlaboratory.web.unc.edu/people/">Ridhi Yarlagadda</a><sup>3</sup>,</span>1
+              <span class="author-block">
+                <a href="https://www.linkedin.com/in/czuraski/">Connor Zuraski</a><sup>1</sup>,</span>
+              <span class="author-block">
+                <a href="https://www.wahchiulab.org/about">Wah Chiu</a><sup>1</sup>,</span>
+              <span class="author-block">
+                <a href="https://cohenlaboratory.web.unc.edu">Sarah Cohen</a><sup>3</sup>,</span>
+              <span class="author-block">
+                <a href="https://scholar.google.de/citations?hl=sk&user=ONpdBm8AAAAJ&view_op=list_works&sortby=pubdate">Jan
+                  N. Hansen</a><sup>1</sup>,</span>
+              <span class="author-block">
+                <a href="https://www.czbiohub.org/sf/person/manuel-leonetti/">Manuel D Leonetti</a><sup>6</sup>,</span>
+              <span class="author-block">
+                <a href="https://www.linkedin.com/in/chad-liu-14a77749/">Chad Liu</a><sup>6</sup>,</span>
+              <span class="author-block">
+                <a href="https://lundberglab.stanford.edu">Emma Lundberg</a><sup>1,5,6</sup>,</span>
+              <span class="author-block">
+                <a href="https://ai.stanford.edu/~syyeung/">Serena Yeung-Levy</a><sup>1,6</sup>
               </span>
             </div>
 
+            <div class="is-size-5 publication-authors">
+              <span class="author-block"><sup>1</sup>Stanford University,</span>
+              <span class="author-block"><sup>2</sup>Tsinghua University,</span>
+              <span class="author-block"><sup>3</sup>University of North Carolina at Chapel Hill,</span>
+              <span class="author-block"><sup>4</sup>Princeton University</span>
+              <span class="author-block"><sup>5</sup>KTH Royal Institute of Technology</span>
+              <span class="author-block"><sup>6</sup>Chan Zuckerberg Biohub Network</span>
+            </div>
+
+            <div class="column has-text-centered">
+              <div class="publication-links">
+                <span class="link-block">
+                  <a href="" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                    </span>
+                    <span>arXiv</span>
+                  </a>
+                </span>
+                <!-- Dataset Link. -->
+                <span class="link-block">
+                  <a href="https://huggingface.co/datasets/jmhb/microvqa"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <!-- <i class="fab fa-github"></i> -->
+                      <i class="fa-huggingface"></i>
+                    </span>
+                    <span>Dataset</span>
+                  </a>
+                </span>
+                <!-- Code Link -->
+                <span class="link-block">
+                  <a href="https://github.com/jmhb0/microvqa" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-github"></i>
+                    </span>
+                    <span>Code</span>
+                  </a>
+                </span>
+
+                <!-- Leaderboard Link. -->
+                <span class="link-block">
+                  <a href="#testing-mllms" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <!-- <i class="fab fa-github"></i> -->
+                      <i class="fa-solid fa-trophy"></i>
+                    </span>
+                    <span>Leaderboard</span>
+                  </a>
+                </span>
+
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
-
-<section class="hero teaser">
-  <div class="container is-max-desktop">
-    <div class="hero-body">
-      <h2 class="subtitle has-text-centered">
-        <p class="mt-4">Two key themes in AI research are understanding reasoning in large language models (LLMs) and applying LLMs to scientific research. Our work bridges both by introducing <span class="has-text-info"><b>MicroVQA</b>, a benchmark that evaluates LLM reasoning on multiple-choice expert-curated questions about microscopy images.</span></p>
-      </h2>
-        <div class="has-text-centered">
-            <img src="./static/images/pull.png" style="width: 90%; max-width: 800px; height: auto;" alt="MicroVQA pull figure."/>
-        </div>
-    </div>
-    <div class="content">
-      <h3>Contributions:</h3>
-      <ul>
-          <li><i class="fas fa-flask"></i> Designed by practicing biologists, these questions reflect tasks where LLMs could meaningfully assist biological research, and each requires multimodal reasoning.</li>
-          <li><i class="fas fa-robot"></i> We also advance the practice of AI benchmarking with our RefineBot method, which makes multiple-choice questions more challenging by using LLM feedback to remove language shortcuts.</li>
-      </ul>
-    </div>
-
-
-  <section class="section">
-    <div class="container">
-        <h2 class="title is-4">Key Elements of MicroVQA</h2>
-
-        <div class="content">
-            <ul>
-                <li><strong>Useful for real scientific researchers:</strong> MicroVQA is composed of 1061 questions across three tasks designed to be central to scientific research - expert visual understanding, hypothesis generation, and experimental proposal.</li>
-                <li><strong>Difficult reasoning:</strong> The questions require specialized research-level microscopy knowledge and high reasoning level (quantified in the Bloom's scale).</li>
-                <li><strong>High-quality, human-created questions:</strong> The questions were created and verified by 11 experts in diverse biological research disciplines.</li>
-                <li><strong>Challenging for current LLMs:</strong> We tested state-of-the-art models spanning open-source, proprietary, and specialized medical models on MicroVQA, with the highest-scoring model achieving 44.2% accuracy over all tasks.</li>
-                <li><strong>Multimodal:</strong> The multimodality of MicroVQA's questions goes beyond having an image attached to the question; the questions require understanding the image to solve them (e.g., localizing structures, comparing images, identifying anomalies). We introduce RefineBot, a method to reduce MLLM reliance on language.</li>
-            </ul>
-        </div>
-    </div>
   </section>
 
-  <section class="section">
-      <div class="container">
+  <section class="hero teaser">
+    <div class="container is-max-desktop">
+      <div class="hero-body">
+        <h2 class="subtitle has-text-centered">
+          <p class="mt-4">Two key themes in AI research are understanding reasoning in large language models (LLMs) and
+            applying LLMs to scientific research. Our work bridges both by introducing <span
+              class="has-text-info"><b>MicroVQA</b>, a benchmark that evaluates LLM reasoning on multiple-choice
+              expert-curated questions about microscopy images.</span></p>
+        </h2>
+        <div class="has-text-centered">
+          <img src="./static/images/pull.png" style="width: 90%; max-width: 800px; height: auto;"
+            alt="MicroVQA pull figure." />
+        </div>
+      </div>
+      <div class="content">
+        <h3>Contributions:</h3>
+        <ul>
+          <li><i class="fas fa-flask"></i> Designed by practicing biologists, these questions reflect tasks where LLMs
+            could meaningfully assist biological research, and each requires multimodal reasoning.</li>
+          <li><i class="fas fa-robot"></i> We also advance the practice of AI benchmarking with our RefineBot method,
+            which makes multiple-choice questions more challenging by using LLM feedback to remove language shortcuts.
+          </li>
+        </ul>
+      </div>
+
+
+      <section class="section">
+        <div class="container">
+          <h2 class="title is-4">Key Elements of MicroVQA</h2>
+
+          <div class="content">
+            <ul>
+              <li><strong>Useful for real scientific researchers:</strong> MicroVQA is composed of 1061 questions across
+                three tasks designed to be central to scientific research - expert visual understanding, hypothesis
+                generation, and experimental proposal.</li>
+              <li><strong>Difficult reasoning:</strong> The questions require specialized research-level microscopy
+                knowledge and high reasoning level (quantified in the Bloom's scale).</li>
+              <li><strong>High-quality, human-created questions:</strong> The questions were created and verified by 11
+                experts in diverse biological research disciplines.</li>
+              <li><strong>Challenging for current LLMs:</strong> We tested state-of-the-art models spanning open-source,
+                proprietary, and specialized medical models on MicroVQA, with the highest-scoring model achieving 44.2%
+                accuracy over all tasks.</li>
+              <li><strong>Multimodal:</strong> The multimodality of MicroVQA's questions goes beyond having an image
+                attached to the question; the questions require understanding the image to solve them (e.g., localizing
+                structures, comparing images, identifying anomalies). We introduce RefineBot, a method to reduce MLLM
+                reliance on language.</li>
+            </ul>
+          </div>
+          Explore the benchmark here:
+          <iframe src="https://huggingface.co/datasets/jmhb/microvqa/embed/viewer/default/dev" frameborder="0"
+            width="100%" style="height: 700px !important;"></iframe>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
           <h2 class="title is-4">Building MicroVQA</h2>
 
           <div class="content">
-              <p><strong class="has-text-info">Why build MicroVQA?</strong> 
-                  Scientific research involves reasoning about complex data while integrating domain-specific knowledge. A lot of recent excitement around LLMs comes from the hope that they can augment humans, either as chat assistants [1,2,3] or as agents [1,2,3]. There are many compelling visions for how these systems might look [1,2,3], but there's now a big need to define concrete tasks that would be useful for real scientists - we need realistic and challenging benchmarks.
-              </p>
+            <p><strong class="has-text-info">Why build MicroVQA?</strong>
+              Scientific research involves reasoning about complex data while integrating domain-specific knowledge. A
+              lot of recent excitement around LLMs comes from the hope that they can augment humans, either as chat
+              assistants [1,2,3] or as agents [1,2,3]. There are many compelling visions for how these systems might
+              look [1,2,3], but there's now a big need to define concrete tasks that would be useful for real scientists
+              - we need realistic and challenging benchmarks.
+            </p>
 
-              <p><strong class="has-text-info">Defining the tasks.</strong> Step 1 was to define tasks, or categories of questions to guide benchmark collection. We developed them with 8 collaborators over ~15h of discussions.</p>
-              
-              <p><em>Expert visual understanding</em> commonly involves anomaly detection or image comparisons. Analysis must consider the sample preparation context and expert knowledge is needed to evaluate biological features and technical artifacts.</p>
+            <p><strong class="has-text-info">Defining the tasks.</strong> Step 1 was to define tasks, or categories of
+              questions to guide benchmark collection. We developed them with 8 collaborators over ~15h of discussions.
+            </p>
 
-              <p><em>Hypothesis generation</em> considers the experimental context and tries to find an explanation for what we see in the image. It requires abductive reasoning, since you need to select from many possible hypotheses given incomplete information.</p>
+            <p><em>Expert visual understanding</em> commonly involves anomaly detection or image comparisons. Analysis
+              must consider the sample preparation context and expert knowledge is needed to evaluate biological
+              features and technical artifacts.</p>
 
-              <p><em>Experimental proposal</em> requires forming a hypothesis and deciding on next steps to validate it. It requires knowledge about experimental protocols and reasoning about whether the experiment would prove that hypothesis.</p>
+            <p><em>Hypothesis generation</em> considers the experimental context and tries to find an explanation for
+              what we see in the image. It requires abductive reasoning, since you need to select from many possible
+              hypotheses given incomplete information.</p>
 
-              <!-- Type Gallery -->
-              <div class="swiper mySwiper1">
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide">
-                        <img src="image1.jpg" alt="Image 1">
-                        <div class="caption">This is the first image</div>
-                    </div>
-                    <div class="swiper-slide">
-                        <img src="image2.jpg" alt="Image 2">
-                        <div class="caption">Another caption for image 2</div>
-                    </div>
-                    <div class="swiper-slide">
-                        <img src="image3.jpg" alt="Image 3">
-                        <div class="caption">Image 3 has a different caption</div>
-                    </div>
+            <p><em>Experimental proposal</em> requires forming a hypothesis and deciding on next steps to validate it.
+              It requires knowledge about experimental protocols and reasoning about whether the experiment would prove
+              that hypothesis.</p>
+
+            <!-- Type Gallery -->
+            <div class="swiper mySwiper1">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <img src="image1.jpg" alt="Image 1">
+                  <div class="caption">This is the first image</div>
                 </div>
-                <div class="swiper-button-next"></div>
-                <div class="swiper-button-prev"></div>
-                <div class="swiper-pagination"></div>
+                <div class="swiper-slide">
+                  <img src="image2.jpg" alt="Image 2">
+                  <div class="caption">Another caption for image 2</div>
+                </div>
+                <div class="swiper-slide">
+                  <img src="image3.jpg" alt="Image 3">
+                  <div class="caption">Image 3 has a different caption</div>
+                </div>
+              </div>
+              <div class="swiper-button-next"></div>
+              <div class="swiper-button-prev"></div>
+              <div class="swiper-pagination"></div>
             </div>
-              <!-- <div class="slideshow-container" id="slideshow1">
+            <!-- <div class="slideshow-container" id="slideshow1">
                 <img class="slide active" src="./static/images/example1.png" alt="Expert visual understanding example">
                 <div class="caption"><em>Expert Visual Understanding Example</em></div>
                 <img class="slide" src="./static/images/example2.png" alt="Hypothesis generation example">
@@ -235,96 +280,121 @@
                 <button class="next" onclick="changeSlide(1, 'slideshow1')">&#10095;</button>
             </div> -->
           </div>
-      </div>
-  </section>
+        </div>
+      </section>
 
-  <section class="section">
-    <div class="container">
-        <h2 class="title is-4">RefineBot: Making MCQs That Test Reasoning and Remove Language Shortcuts</h2>
+      <section class="section">
+        <div class="container">
+          <h2 class="title is-4">RefineBot: Making MCQs That Test Reasoning and Remove Language Shortcuts</h2>
 
-        <div class="content">
-            <p>For evaluations, it's common to start with a 'question' and 'answer' and to use an LLM to generate a good multiple-choice question, including the wrong answers that are called 'distractors'. Here we'll use a very easy biology question to demonstrate.</p>
-            
-            <figure class="image">
-                <img src="./static/images/bot1.png" style="width: 100%; max-width: 800px; height: auto;" alt="Example question generation">
-            </figure>
-
-            <p>We found that this naive approach leads to questions that are very easy for LLMs to solve - GPT-4o could get 90% of questions correct, even without the image. Since the original questions really do need the image, we concluded that the generated questions were introducing language shortcuts, meaning LLMs could cheat and solve them using test-taking strategies. We identified 3 types of shortcuts:</p>
+          <div class="content">
+            <p>For evaluations, it's common to start with a 'question' and 'answer' and to use an LLM to generate a good
+              multiple-choice question, including the wrong answers that are called 'distractors'. Here we'll use a very
+              easy biology question to demonstrate.</p>
 
             <figure class="image">
-                <img src="./static/images/bot2.png" style="width: 100%; max-width: 800px; height: auto;" alt="Three types of shortcuts">
+              <img src="./static/images/bot1.png" style="width: 100%; max-width: 800px; height: auto;"
+                alt="Example question generation">
             </figure>
 
-            <p><strong>Shortcut 1:</strong> The text 'gives away' the image content  so it's trivial to answer the question.</p>
+            <p>We found that this naive approach leads to questions that are very easy for LLMs to solve - GPT-4o could
+              get 90% of questions correct, even without the image. Since the original questions really do need the
+              image, we concluded that the generated questions were introducing language shortcuts, meaning LLMs could
+              cheat and solve them using test-taking strategies. We identified 3 types of shortcuts:</p>
+
+            <figure class="image">
+              <img src="./static/images/bot2.png" style="width: 100%; max-width: 800px; height: auto;"
+                alt="Three types of shortcuts">
+            </figure>
+
+            <p><strong>Shortcut 1:</strong> The text 'gives away' the image content so it's trivial to answer the
+              question.</p>
             <p><strong>Shortcut 2:</strong> The LLM generates implausible or weak distractors.</p>
             <p><strong>Shortcut 3:</strong> 'Language bias', is a known problem in VQA [1, 2].</p>
 
-            <p>We created RefineBot to fix this (<a href="https://github.com/jmhb0/microvqa_tmp">code here</a>). The key idea is that if you give the question to the LLM without the image (box 1 below), then the LLM's chain-of-thought response will show you what language shortcut it used (box 2). Then you can simply prompt the LLM to rewrite the question in a way that removes the shortcut (boxes 3 and 4).</p>
+            <p>We created RefineBot to fix this (<a href="https://github.com/jmhb0/microvqa">code here</a>). The key
+              idea is that if you give the question to the LLM without the image (box 1 below), then the LLM's
+              chain-of-thought response can show you what language shortcut it used (box 2). Then you can simply prompt
+              the LLM to rewrite the question in a way that removes the shortcut (boxes 3 and 4).</p>
 
             <figure class="image">
-                <img src="./static/images/bot3.png" style="width: 100%; max-width: 800px; height: auto;" alt="RefineBot process">
+              <img src="./static/images/bot3.png" style="width: 100%; max-width: 800px; height: auto;"
+                alt="RefineBot process">
             </figure>
 
-            <p>The final RefineBot system applies this basic idea in a loop, with an extra check that the revised question matches the original question.</p>
+            <p>The final RefineBot system applies this basic idea in a loop, with an extra check that the revised
+              question matches the original question.</p>
 
             <figure class="image">
-                <img src="./static/images/refinebot.png" style="width: 40%; max-width: 800px; height: auto;" alt="Final RefineBot system">
+              <img src="./static/images/refinebot.png" style="width: 40%; max-width: 800px; height: auto;"
+                alt="Final RefineBot system">
             </figure>
 
-            <p>While we designed this to deal with language shortcuts in particular, we think that a similar strategy could make any multiple-choice question harder.</p>
+            <p>While we designed this to deal with language shortcuts in particular, we think that a similar strategy
+              could make any multiple-choice question harder.</p>
           </div>
 
-    </div>
-  </section>
+        </div>
+      </section>
 
-  <section class="section">
-    <div class="container">
-        <h2 class="title is-4">Testing MLLMs on MicroVQA</h2>
+      <section class="section" id="testing-mllms">
+        <div class="container">
+          <h2 class="title is-4">Testing MLLMs on MicroVQA</h2>
 
-        <div class="content">
+          <div class="content">
             <p>We tested MicroVQA on current frontier models:</p>
 
-            <iframe src="static/leaderboard/leaderboard.html" width="100%" height="500px" style="border: none;"></iframe>
+            <iframe src="static/leaderboard/leaderboard.html" width="100%" height="500px"
+              style="border: none;"></iframe>
 
             <ul class="content">
-                <li>MicroVQA is too challenging for all existing multimodal LLMs.</li>
-                <li>There is little gap between frontier closed- and open-source models.</li>
-                <li>For a given model family, there is very little difference between the larger model like Qwen2-VL-72B and its smaller counterpart Qwen2-VL-7B - note that the smaller models often have the same vision encoder.</li>
-                <li>Standard fine-tuning methods for medical fine-tuning (as in Llava-Med) do improve performance a bit.</li>
-                <li>The human baseline was 51% - this reflects that biology is very specialized, so even expert humans will get many questions wrong.</li>
-                <li>The models used by the RefineBot MCQ generation - GPT-4o and Claude-3.5-Sonnet - underperform, probably due to a small bias induced by their use in MCQ construction.</li>
+              <li>MicroVQA is too challenging for all existing multimodal LLMs.</li>
+              <li>There is little gap between frontier closed- and open-source models.</li>
+              <li>For a given model family, there is very little difference between the larger model like Qwen2-VL-72B
+                and its smaller counterpart Qwen2-VL-7B - note that the smaller models often have the same vision
+                encoder.</li>
+              <li>Standard fine-tuning methods for medical fine-tuning (as in Llava-Med) do improve performance a bit.
+              </li>
+              <li>The human baseline was 51% - this reflects that biology is very specialized, so even expert humans
+                will get many questions wrong.</li>
+              <li>Starred models (*) were used by the RefineBot in MCQ - GPT-4o and Claude-3.5-Sonnet. This could induce
+                a small bias that makes their final performance relatively worse.</li>
             </ul>
           </div>
-      </div>
-  </section>
+        </div>
+      </section>
 
-  <section class="section">
-      <div class="container">
+      <section class="section">
+        <div class="container">
           <h2 class="title is-4">What do MLLMs get wrong?</h2>
-  
+
           <div class="content">
-              <p><strong class="has-text-info">Understanding error modes.</strong> 
-                  We manually reviewed 30 random samples of errors by Claude-3.5-Sonnet, taking about 45 minutes to carefully understand the failures. Here's one example:
-              </p>
-  
-              <!-- Gallery for Error Examples -->
-              <div class="swiper mySwiper2">
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide">
-                        <img src="./static/images/767_157_770_anat_blooms-4_task-1_incorrect.png" alt="Example perception error">
-                    </div>
-                    <div class="swiper-slide">
-                        <img src="./static/images/806_165_809_neur_blooms-3_task-1_incorrect.png" alt="Example misconception (knowledge) error">
-                    </div>
-                    <div class="swiper-slide">
-                        <img src="./static/images/771_158_774_path_blooms-2_task-2_incorrect.png" alt="Example overgeneralization error">
-                    </div>
+            <p><strong class="has-text-info">Understanding error modes.</strong>
+              We manually reviewed 30 random samples of errors by Claude-3.5-Sonnet, taking about 45 minutes to
+              carefully understand the failures. Here's one example:
+            </p>
+
+            <!-- Gallery for Error Examples -->
+            <div class="swiper mySwiper2">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <img src="./static/images/767_157_770_anat_blooms-4_task-1_incorrect.png"
+                    alt="Example perception error">
                 </div>
-                <div class="swiper-button-next"></div>
-                <div class="swiper-button-prev"></div>
-                <div class="swiper-pagination"></div>
+                <div class="swiper-slide">
+                  <img src="./static/images/806_165_809_neur_blooms-3_task-1_incorrect.png"
+                    alt="Example misconception (knowledge) error">
+                </div>
+                <div class="swiper-slide">
+                  <img src="./static/images/771_158_774_path_blooms-2_task-2_incorrect.png"
+                    alt="Example overgeneralization error">
+                </div>
               </div>
-              <!-- <div class="slideshow-container" id="slideshow2">
+              <div class="swiper-button-next"></div>
+              <div class="swiper-button-prev"></div>
+              <div class="swiper-pagination"></div>
+            </div>
+            <!-- <div class="slideshow-container" id="slideshow2">
                 <img class="slide active" src="./static/images/767_157_770_anat_blooms-4_task-1_incorrect.png" alt="Example perception error">
                 <p class="has-text-centered"><em>Example perception error</em></p>
                 <img class="slide" src="./static/images/806_165_809_neur_blooms-3_task-1_incorrect.png" alt="Example misconception (knowledge) error">
@@ -334,15 +404,19 @@
                 <button class="prev" onclick="changeSlide(-1, 'slideshow2')">&#10094;</button>
                 <button class="next" onclick="changeSlide(1, 'slideshow2')">&#10095;</button>
               </div> -->
-  
-              <ul class="content">
-                  <li><strong>50%</strong> were <strong>perception errors</strong> - failing to interpret the image. Many responses tend to rely on the 'language bias' towards common image content (that we discuss above).</li>
-                  <li><strong>30%</strong> were <strong>misconception errors</strong> (or knowledge errors) about nuanced biomedical knowledge.</li>
-                  <li><strong>13%</strong> were <strong>over-generalization or over-simplification</strong> - the model answers a less-specific and less-nuanced version of the actual question.</li>
-                  <li><strong>7%</strong> were <strong>hallucinations</strong> about the question text added in the chain-of-thought response.</li>
-              </ul>
-  
-              <!-- <p>
+
+            <ul class="content">
+              <li><strong>50%</strong> were <strong>perception errors</strong> - failing to interpret the image. Many
+                responses tend to rely on the 'language bias' towards common image content (that we discuss above).</li>
+              <li><strong>30%</strong> were <strong>misconception errors</strong> (or knowledge errors) about nuanced
+                biomedical knowledge.</li>
+              <li><strong>13%</strong> were <strong>over-generalization or over-simplification</strong> - the model
+                answers a less-specific and less-nuanced version of the actual question.</li>
+              <li><strong>7%</strong> were <strong>hallucinations</strong> about the question text added in the
+                chain-of-thought response.</li>
+            </ul>
+
+            <!-- <p>
                   Finally, we conducted a <strong>language-only ablation</strong>, where GPT-4o was prompted without the image. This resulted in an accuracy of <strong>XX%</strong> of questions. However, this does not mean these questions are not vision-centric! We used an LLM to analyze the chain-of-thought responses (CoTs) of correct answers.
               </p>
   
@@ -350,231 +424,100 @@
                   First, we found that <strong>YY%</strong> of answers were likely due to <strong>language bias</strong>: the correct answer was simply the most statistically likely choice. The remaining <strong>AA%</strong> of questions may truly not be vision-centric, which is an unavoidable challenge in VQA benchmarks (e.g., as shown by Cambrian Fig.3).
               </p> -->
           </div>
-      </div>
-  </section>
-  <section class="section">
-    <div class="container">
-        <h2 class="title is-4">Bloom's Taxonomy to Measure Reasoning Difficulty</h2>
+        </div>
+      </section>
+      <section class="section">
+        <div class="container">
+          <h2 class="title is-4">Bloom's Taxonomy to Measure Reasoning Difficulty</h2>
 
-        <div class="content">
-            <p><strong class="has-text-info">Why use Bloom's Taxonomy?</strong>  
-                Bloom's Taxonomy classifies cognitive skills into six levels, from basic recall to complex reasoning. While multiple-choice questions (MCQs) cannot assess the highest level—creation—they effectively test comprehension, application, analysis, and evaluation <a href="#">[1]</a><a href="#">[2]</a><a href="#">[3]</a>.  
-                MicroVQA applies Bloom's Taxonomy to systematically compare the reasoning demands of multimodal biomedical benchmarks.
+          <div class="content">
+            <p><strong class="has-text-info">Why use Bloom's Taxonomy?</strong>
+              Bloom's Taxonomy classifies cognitive skills into six levels, from basic recall to complex reasoning.
+              While multiple-choice questions (MCQs) cannot assess the highest level—creation—they effectively test
+              comprehension, application, analysis, and evaluation <a href="#">[1]</a><a href="#">[2]</a><a
+                href="#">[3]</a>.
+              MicroVQA applies Bloom's Taxonomy to systematically compare the reasoning demands of multimodal biomedical
+              benchmarks.
             </p>
 
-            <p><strong class="has-text-info">MicroVQA's focus on high reasoning levels.</strong>  
-                Prior benchmarks, often derived from educational exams and textbooks, emphasize recall and basic comprehension. In contrast, MicroVQA prioritizes higher-order reasoning by testing scientific research tasks such as analyzing microscopy images in novel experimental contexts and evaluating hypotheses.  
-                This structured approach ensures that MicroVQA better reflects the cognitive demands of real scientific reasoning, filling a crucial gap in multimodal AI evaluation.
+            <p><strong class="has-text-info">MicroVQA's focus on high reasoning levels.</strong>
+              Prior benchmarks, often derived from educational exams and textbooks, emphasize recall and basic
+              comprehension. In contrast, MicroVQA prioritizes higher-order reasoning by testing scientific research
+              tasks such as analyzing microscopy images in novel experimental contexts and evaluating hypotheses.
+              This structured approach ensures that MicroVQA better reflects the cognitive demands of real scientific
+              reasoning, filling a crucial gap in multimodal AI evaluation.
             </p>
 
             <figure class="image">
-              <img src="./static/images/blooms.png" style="width: 60%; max-width: 800px; height: auto;" alt="Bloom's Taxonomy in MicroVQA">
+              <img src="./static/images/blooms.png" style="width: 60%; max-width: 800px; height: auto;"
+                alt="Bloom's Taxonomy in MicroVQA">
               <figcaption style="text-align: center; font-size: 14px; color: #555; margin-top: 8px;">
                 Composition of scientific MLLM benchmarks regarding estimated Bloom's taxonomy.
               </figcaption>
-          </figure>
+            </figure>
+          </div>
         </div>
+      </section>
     </div>
   </section>
-  </div>
-</section>
 
 
 
-<!--/ Abstract.
-<section class="section">
-  <div class="container is-max-desktop">
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Abstract</h2>
-        <div class="content has-text-justified">
-          <p>
-            Scientific research demands sophisticated reasoning over multimodal data, a challenge especially prevalent in biology. Despite recent advances in multimodal large language models (MLLMs) for AI-assisted research, existing multimodal reasoning benchmarks only target up to college-level difficulty, while research-level benchmarks emphasize lower-level perception, falling short of the complex multimodal reasoning needed for scientific discovery. To bridge this gap, we introduce MicroVQA, a visual-question answering (VQA) benchmark designed to assess three reasoning capabilities vital in research workflows: expert image understanding, hypothesis generation, and experiment proposal. MicroVQA consists of 1,042 multiple-choice questions (MCQs) curated by biology experts across diverse microscopy modalities, ensuring VQA samples represent real scientific practice. In constructing the benchmark, we find that standard MCQ generation methods induce language shortcuts, motivating a new two-stage pipeline: an optimized LLM prompt structures question-answer pairs into MCQs; then, an agent-based `RefineBot' updates them to remove shortcuts. Benchmarking on state-of-the-art MLLMs reveal a peak performance of 53%; models with smaller LLMs only slightly underperform top models, suggesting that language-based reasoning is less challenging than multimodal reasoning; and tuning with scientific articles enhances performance. Expert analysis of chain-of-thought responses indicates that perception errors are the most frequent, followed by knowledge errors and then overgeneralization reasoning errors. These insights highlight the challenges in multimodal scientific reasoning, showing MicroVQA is a valuable resource advancing AI-driven biomedical research. MicroVQA is available <a href=
-            "https://huggingface.co/datasets/microvqa/microvqa">here</a>.
-          </p>
-        </div>
-      </div>
-    </div> -->
 
-  
-
-
-<!-- <section class="section">
-  <div class="container is-max-desktop">
-    <h2 class="title is-4">Two key findings about 3D control in the text input space</h2>
-    <p><b>Finding 1</b> (figure below, left): the text input space has a <i>continuous view-control manifold</i>. </p>
-    </p>Evidence: using just 6 views of one scene, we learn to generate 3D view tokens that interpolate to novel views.</p>
-    <br>
-    <p><b>Finding 2</b> (figure below, right): the text input space likely has a <i>semantically disentangled view control manifold</i>, meaning the same 3D view token can generalize to many scenes. 
-      <p>Evidence: we learn 3D view tokens across 88 scenes in DTU, and it generalizes to new scenes. Specifically, we use it to do novel view synthesis from a single image.</p>
-    <br>
-    <div class="content">
-      <img src="./static/images/findings.png" class="" alt="ViewNeTI key findings."/>
-    </div>
-  </div>
-</section>
-
-<section class="section">
-  <div class="container is-max-desktop">
-    <h2 class="title is-4">Our approach: learn a small network to predict 3D view tokens</h2>
-    <p>We learn a small neural mapping network that takes camera parameters and predicts a `3D view token'. We then add the 3D view token to a text prompt to generate the image in that viewpoint. The train the network with <a href="https://textual-inversion.github.io/">Textual inversion</a>.</p>
-    <br>
-    <p>In the figure below, the camera parameters are a vector, $R_i$, and we also condition on the diffusion timestep, $t$, and the UNet layer $\ell$. This is for "finding 1", and for "finding 2", we also predict a token for each object (see the paper).</p>
-    <br>
-    <div class="content">
-      <img src="./static/images/system-fig.png" class="" alt="system figure."/>
-    </div>
-  </div>
-</section>
-
-
-<section class="section">
-  <div class="container is-max-desktop">
-    <h2 class="title is-4">Conclusion: 2D models have 3D representations in their text space</h2>
-    <p>Since we kept the text-to-image diffusion model frozen, and we only learned a simple network, we conclude that text-to-image diffusion models likely have internal 3D scene representations. This might help explain why models like Stable Diffusion generate such compelling 3D features, like in this image below where infilling the background creates shadows that are consistent with the original object. A few other works study 3D representations from different perspectives - see Related Work below </p>
-  </div>
-  <br>
-  <div class="columns is-centered">
-          <div class="column content">
-            <img src="./static/images/infilling_.png" alt="Infilling StableDiffusion example"/>
+  <footer class="footer">
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="column is-8">
+          <div class="content">
+            <p>
+              The template for this page is taken from <a href="https://nerfies.github.io/">Nerfies</a>. If you reuse
+              their <a href="https://github.com/nerfies/nerfies.github.io">code</a>, please link to their site.
+            </p>
+            <p>
+              .
+            </p>
           </div>
-
-</section>
-
-<section class="section">
-  <div class="container is-max-desktop">
-    <h2 class="title is-4">Applications</h2>
-    <b>1. View-controlled text-to-image generation. </b>
-    <p>Add the 3D view token to a new text prompt to control the 3D viewpoint for new objects (sample results below, left).</p>
-    <br>
-    <b>2. Novel view synthesis from 1 image (or more images), with very good sample efficiency</b>
-    <p>By pretraining on 88 scenes from DTU or on 50 scenes from Objaverse, we can do single-image NVS (sample results below, right). Because we're working through a pretrained diffusion model, the generated views have excellent photorealism and LPIPS. We also find that feed-forward methods like Zero-1-to-3 can't learn any camera control on 50 scenes, and need 800k pretraining scenes to get good results (paper supplementary). 
-  </div>
-  <br>
-  <div class="columns is-centered">
-          <div class="column content">
-            <img src="./static/images/applications.png" alt="Infilling StableDiffusion example"/>
-          </div>
-
-</section>
-
-
-
-<!-- Related Work. -->
-<!--
-<div class="columns is-centered">
-  <div class="column is-full-width">
-    <h2 class="title is-3">Related work</h2>
-    <div class="content has-text-justified">
-      <p>
-        <b>3D representations in 2D models</b> have been investigated by a few works that probe Unet activations over many diffusion timesteps. <a href="https://arxiv.org/abs/2310.06836">Zhan et al.</a> trains linear SVMs to predict 3D relations between two regions in the same image. <a href="https://arxiv.org/abs/2306.05720">Chen et al.</a> train linear probes for depth and salient object / background segmentation, and also perform latent intervention during generation to alter geometric properties. <a href="https://arxiv.org/abs/2404.08636">El Banani et al.</a> train a convolution network for estimating depth and surface normals, while also using latents for 2-image visual correspondence in zero-shot. By contrast, ViewNeTI (our work) studies 3D control in the word embedding space by learning `3D view tokens'. 
-      </p>
-
-      <br>
-      <p>
-        In <b>view-controlled text-to-image generation</b>, a few concurrent works had some similar ideas. In <a href="https://ttchengab.github.io/continuous_3d_words/">Continuous 3D words</a>, they control viewpoint as well as lighting and pose in the word embedding space, but also fine-tune Loras. Later, <a href="https://customdiffusion360.github.io/">Kumari et al.</a> adds camera control to model customization methods. 
-      </p>
-
-      <br>
-      <p>
-        In <b>novel view synthesis</b>, the closest is <a href="https://sites.google.com/view/dreamsparse-webpage">DreamSparse</a>, because they are interested in leveraging a pretrained diffusion models and learning few parameters for data efficiency, although they require at least 2 input views. 
-      </p>
-
-      <br>
-      <p>
-      In terms of <b>methods</b>, our work uses <a href="https://textual-inversion.github.io/">textual inversion</a> that was developed for diffusion model personalization, but we adapt it to 3D novel view synthesis. We use ideas and code from the recent <a href="https://neuraltextualinversion.github.io/NeTI/">Neural Textual Inversion (NeTI)</a> model.
-      </p>
-    </div>
-  </div>
-</div>
-</section>
-
-<section class="section">
-  <div class="container is-max-desktop">
-    <h2 class="title is-4">In hindsight ...</h2>
-    <p>
-      At the start of the project, we were mainly excited by the possibility that image diffusion models had learned an internal 3D model from 2D supervision. This was based on qualitative results like the car infilling we show above, which is the paper Fig.1. This seems to have been a good intuition, since other works like <a href="https://arxiv.org/abs/2310.06836">Zhan et al.</a> showed a very similar figure as their motivation, and we later saw similar figures used in various talks. It's also stated as a motivation in <a href="https://zero123.cs.columbia.edu/">Zero-1-to-3</a>. </p>
-
-      <br>
-      <p>Despite the motivation being understanding 3D representations, our earlier drafts emphasized the application to novel view synthesis (NVS). This seemed like the highest impact contribution: ViewNeTI is very sample efficient (learning to do single-image NVS from as few as 50 scenes); and it seemed very well-motivated to do NVS via a frozen diffusion model, since it enables you to leverage knowledge from the massive 2D pre-training datasets. The key advantage is that it reduces the reliance on large 3d datasets for multi view training, however we underestimated how willing the 3D vision community was to create and work with large 3D datasets, and overestimated their excitement for sample efficient methods (especially since our results have the best LPIPS but not the best PSNR compared to other methods that use NeRFs). On the other hand, there was a lot more interest in understanding 3D representations than we expected, which was the focus of our final paper. </p>
-
-      <br>
-      <p>We only identified view-controlled text-to-image generation as an application much later, and we were surprised to find that this is a very promising direction, with a few related works by <a href="https://ttchengab.github.io/continuous_3d_words/">Cheng et al.</a> and <a href="https://arxiv.org/abs/2404.12333">Kumari et al</a>.  
-      </p>
-
-    </div>
-
-</section>
-
-
-
-
-<section class="section" id="BibTeX">
-  <div class="container is-max-desktop content">
-    <h2 class="title">BibTeX</h2>
-    <pre><code>@inproceedings{burgess2025viewpoint,
-  title={Viewpoint Textual Inversion: Discovering Scene Representations and 3D View Control in 2D Diffusion Models},
-  author={Burgess, James and Wang, Kuan-Chieh and Yeung-Levy, Serena},
-  booktitle={European Conference on Computer Vision},
-  pages={416--435},
-  year={2025},
-  organization={Springer}
-}</code></pre>
-  </div>
-</section> -->
-
-<footer class="footer">
-  <div class="container">
-    <div class="columns is-centered">
-      <div class="column is-8">
-        <div class="content">
-          <p>
-          The template for this page is taken from <a href="https://nerfies.github.io/">Nerfies</a>.  If you reuse their <a href="https://github.com/nerfies/nerfies.github.io">code</a>, please link to their site.
-          </p>
-          <p>
-          .
-          </p>
         </div>
       </div>
     </div>
-  </div>
-</footer>
+  </footer>
 
-<!-- Slider info -->
-<script>
-  var swiper1 = new Swiper(".mySwiper1", {
+  <!-- Slider info -->
+  <script>
+    var swiper1 = new Swiper(".mySwiper1", {
       loop: true,
       pagination: {
-          el: ".mySwiper1 .swiper-pagination",
-          clickable: true,
+        el: ".mySwiper1 .swiper-pagination",
+        clickable: true,
       },
       navigation: {
-          nextEl: ".mySwiper1 .swiper-button-next",
-          prevEl: ".mySwiper1 .swiper-button-prev",
+        nextEl: ".mySwiper1 .swiper-button-next",
+        prevEl: ".mySwiper1 .swiper-button-prev",
       },
       autoplay: {
-          delay: 3000,
-          disableOnInteraction: false,
+        delay: 3000,
+        disableOnInteraction: false,
       },
-  });
+    });
 
-  var swiper2 = new Swiper(".mySwiper2", {
+    var swiper2 = new Swiper(".mySwiper2", {
       loop: true,
       pagination: {
-          el: ".mySwiper2 .swiper-pagination",
-          clickable: true,
+        el: ".mySwiper2 .swiper-pagination",
+        clickable: true,
       },
       navigation: {
-          nextEl: ".mySwiper2 .swiper-button-next",
-          prevEl: ".mySwiper2 .swiper-button-prev",
+        nextEl: ".mySwiper2 .swiper-button-next",
+        prevEl: ".mySwiper2 .swiper-button-prev",
       },
       autoplay: {
-          delay: 4000, // Different delay if needed
-          disableOnInteraction: false,
+        delay: 4000, // Different delay if needed
+        disableOnInteraction: false,
       },
-  });
-</script>
+    });
+  </script>
 
 
 </body>
+
 </html>
