@@ -245,7 +245,7 @@
           <p><strong class="has-text-info">Why build MicroVQA?</strong>
             Scientific research involves reasoning about complex data while integrating domain-specific knowledge. A
             lot of recent excitement around LLMs comes from the hope that they can augment humans, either as chat
-            assistants [<a href="https://www.nature.com/articles/s41586-024-07618-3">1</a>, <a href="https://proceedings.neurips.cc/paper_files/paper/2024/hash/36850592258c8c41cecdaa3dea5ff7de-Abstract-Datasets_and_Benchmarks_Track.html">2</a>, <a href="https://www.biorxiv.org/content/10.1101/2024.04.30.591835.abstract">3</a>, <a href="https://arxiv.org/abs/2306.10070">4</a>] or as agents [<a href="https://www.nature.com/articles/s41586-023-06792-0">1</a>,<a href="https://www.nature.com/articles/s42256-024-00832-8">2</a>,<a href="https://www.nature.com/articles/s41592-023-01912-0">3</a>, <a href="https://arxiv.org/abs/2502.18864">4</a>]. There are some compelling visions for how these systems might look [<a href="https://arxiv.org/abs/2205.02007">1</a>,<a href="https://arxiv.org/abs/2404.02831">2</a>] but there's now a big need to define concrete tasks that would be useful for real scientists - we need realistic and challenging benchmarks.
+            assistants [<a href="https://www.nature.com/articles/s41586-024-07618-3">1</a>,<a href="https://proceedings.neurips.cc/paper_files/paper/2024/hash/36850592258c8c41cecdaa3dea5ff7de-Abstract-Datasets_and_Benchmarks_Track.html">2</a>, <a href="https://www.biorxiv.org/content/10.1101/2024.04.30.591835.abstract">3</a>,<a href="https://arxiv.org/abs/2306.10070">4</a>] or as agents [<a href="https://www.nature.com/articles/s41586-023-06792-0">1</a>,<a href="https://www.nature.com/articles/s42256-024-00832-8">2</a>,<a href="https://www.nature.com/articles/s41592-023-01912-0">3</a>,<a href="https://arxiv.org/abs/2502.18864">4</a>]. There are some compelling visions for how these systems might look [<a href="https://arxiv.org/abs/2205.02007">1</a>,<a href="https://arxiv.org/abs/2404.02831">2</a>] but there's now a big need to define concrete tasks that would be useful for real scientists - we need realistic and challenging benchmarks.
           </p>
 
           <p><strong class="has-text-info">Defining the tasks.</strong> Step 1 was to define tasks, or categories of
@@ -450,14 +450,6 @@
         <h2 class="title is-4">Bloom's Taxonomy to Measure Reasoning Difficulty</h2>
 
         <div class="content">
-          <!-- <p><strong class="has-text-info">Why use Bloom's Taxonomy?</strong>
-            Bloom's Taxonomy classifies cognitive skills into six levels, from basic recall to complex reasoning.
-            While multiple-choice questions (MCQs) cannot assess the highest level—creation—they effectively test
-            comprehension, application, analysis, and evaluation <a href="#">[1]</a><a href="#">[2]</a><a
-              href="#">[3]</a>.
-            MicroVQA applies Bloom's Taxonomy to systematically compare the reasoning demands of multimodal biomedical
-            benchmarks.
-          </p> -->
 
           <p><strong class="has-text-info">MicroVQA's focus on high reasoning levels.</strong>
             We argued that prior MLLM benchmarks for science tend to emphasize recall and basic comprehension, probably 
@@ -467,7 +459,7 @@
           </p>
           <p>
             <p><strong class="has-text-info">Bloom's taxonomy.</strong>
-            To quantify this more challenging reasoning, we used the Bloom's taxonomy [<a href="https://en.wikipedia.org/wiki/Bloom%27s_taxonomy">1</a>], which classifies cognitive skills into six levels, from basic recall to complex reasoning. While multiple-choice questions (MCQs) cannot assess the highest level — called 'creation' — they effectively test comprehension, application, analysis, and evaluation [<a href="https://www.lifescied.org/doi/10.1187/cbe.08-05-0024">1</a>, <a href="https://pubmed.ncbi.nlm.nih.gov/28231408/">2</a>, <a href="https://books.google.com/books/about/A_Taxonomy_for_Learning_Teaching_and_Ass.html?id=EMQlAQAAIAAJ">3</a>]. 
+            To quantify this more challenging reasoning, we used the Bloom's taxonomy [<a href="https://en.wikipedia.org/wiki/Bloom%27s_taxonomy">1</a>], which classifies cognitive skills into six levels, from basic recall to complex reasoning. While multiple-choice questions (MCQs) cannot assess the highest level — called 'creation' — they effectively test comprehension, application, analysis, and evaluation [<a href="https://www.lifescied.org/doi/10.1187/cbe.08-05-0024">1</a>,<a href="https://pubmed.ncbi.nlm.nih.gov/28231408/">2</a>,<a href="https://books.google.com/books/about/A_Taxonomy_for_Learning_Teaching_and_Ass.html?id=EMQlAQAAIAAJ">3</a>]. 
             We trained an LLM to classify MCQs into Bloom's levels. This lets us compare reasoning levels between different vision-language MCQ benchmarks in science:
           </p>
 
