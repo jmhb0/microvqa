@@ -8,5 +8,13 @@ The repo contains:
 
 If any of this is useful, please cite us!
 ```
-@article{}
+@article{@burgess2025microvqa,
+      title={MicroVQA: A Multimodal Reasoning Benchmark for Microscopy-Based Scientific Research}, 
+      author={James Burgess and Jeffrey J Nirschl and Laura Bravo-Sánchez and Alejandro Lozano and Sanket Rajan Gupte and Jesus G. Galaz-Montoya and Yuhui Zhang and Yuchang Su and Disha Bhowmik and Zachary Coman and Sarina M. Hasan and Alexandra Johannesson and William D. Leineweber and Malvika G Nair and Ridhi Yarlagadda and Connor Zuraski and Wah Chiu and Sarah Cohen and Jan N. Hansen and Manuel D Leonetti and Chad Liu and Emma Lundberg and Serena Yeung-Levy},
+      year={2025},
+      eprint={2503.13399},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV},
+      url={https://arxiv.org/abs/2503.13399}, 
+}
 ```
