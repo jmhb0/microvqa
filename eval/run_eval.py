@@ -74,7 +74,7 @@ TEST_MODEL_ABLATIONS = [
 @click.option('--num_threads', type=int, default=64, help='Number of threads for evaluation')
 @click.option('--is_stage1', type=click.BOOL, default=False, help='Run evaluation for stage 1')
 def main(subset, model, no_image, seed, num_threads, is_stage1):
-    dataset = datasets.load_dataset("jmhb/microvqa")['train']
+    dataset = datasets.load_dataset("jmhb/microvqa")['test']
     if subset > 0:
         dataset = dataset.select(range(subset))
     
